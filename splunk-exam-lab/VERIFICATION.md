@@ -14,3 +14,11 @@ Environment: macOS arm64, Python 3.9.6 virtual environment, Node.js 24.19.0, pnp
 - POSIX startup script passed shell syntax validation. Equivalent local server commands were exercised on macOS. Windows/Linux scripts and Docker files are provided, but Windows, Linux and Docker execution were not exercised.
 
 See README for operating instructions, scoring definitions, backup semantics, and content limitations.
+
+## Question bank update · 10 October 2026
+
+- Reviewed 358 records: 300 authored questions and 58 playlist adaptations; 355 eligible for practice and three supplemental items excluded from examinations.
+- Direct four-option single-answer bank, all 32 objectives covered, 1,432 option explanations, unique normalized stems, balanced shuffled base answer keys.
+- Conservative one-time content upgrade preserves personal edits, soft deletions, revisions, and exam snapshots. Added tests for upgrade preservation, playlist eligibility and concealment, and CSV metadata round trips.
+- Backend: 25 tests pass. TypeScript and Vite production build pass.
+- Content was reviewed against primary documentation. No independent SME review or live Splunk query execution.

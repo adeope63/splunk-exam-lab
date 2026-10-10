@@ -33,12 +33,12 @@ pnpm dev
 
 On Windows use `backend\.venv\Scripts\python.exe` and `backend\.venv\Scripts\uvicorn.exe` instead of their POSIX equivalents. `start.bat` handles these paths. For subsequent starts with installed dependencies, just run the two server commands above.
 
-The default database is `backend/data/exam-lab.sqlite3`. Initialization migrates the schema and seeds the official blueprint and questions once. Edits and soft-deletions survive restarts. An alternate absolute database path can be set through the `SPLUNK_LAB_DB` environment variable before starting the backend. The root `.env.example` documents variables; it is not automatically loaded by the startup scripts. Vite reads `frontend/.env` for its proxy override.
+The default database is `backend/data/exam-lab.sqlite3`. Initialization migrates the schema and seeds the official blueprint and questions once. The playlist bundle is added once to existing databases, with a separate initialization marker. The October 2026 style update is applied once, and only replaces records that still exactly match their bundled predecessors. Personal edits and soft-deletions survive restarts. An alternate absolute database path can be set through the `SPLUNK_LAB_DB` environment variable before starting the backend. The root `.env.example` documents variables; it is not automatically loaded by the startup scripts. Vite reads `frontend/.env` for its proxy override.
 
 ## Features
 
 - Dashboard with attempted answers, unique coverage, completed sessions, mean/best scores, accuracy, study streak, weighted readiness estimate, strongest/weakest domains, trend, recent results, and all 32 objective coverage records.
-- Full mocks use 65 unique question IDs with saved timer deadlines, shuffled questions/options, single and multiple-response questions, review flags, navigator, submission confirmation, and resume. Full mocks never include correct-answer IDs or explanations in their active exam payloads.
+- Full mocks use 65 unique question IDs with saved timer deadlines, shuffled questions/options, four-option single-answer bundled questions (imported multiple-response questions are also supported), review flags, navigator, submission confirmation, and resume. Full mocks never include correct-answer IDs or explanations in their active exam payloads.
 - Quick practice supports 10/20/30/50 or custom counts, optional timer, immediate checked feedback or final feedback, and difficulty filtering. Checked answers lock to prevent changing them after seeing the solution.
 - Topic sessions filter domains and exact objectives, prioritize low-accuracy domains (unattempted domains first), and optionally exclude previously answered questions. Domain and objective filters intersect. Requests exceeding the available matching bank return an actionable message rather than silently repeating questions.
 - Results include exact-match scores, incorrect/unanswered counts, elapsed time, domain/objective breakdowns, selected/correct answers, per-option explanations, and documentation links. Incorrect questions can be retaken using their original snapshots, even if the bank entry changed.
@@ -59,7 +59,7 @@ The PDF specifies 65 questions and 60 total minutes including three minutes for 
 
 Hamilton/largest-remainder rounding allocates `floor(65 × weight / 100)` then awards remaining seats to the largest fractional remainders, with lower domain IDs resolving ties:
 
-| Domain | Weight | Bank | Full mock |
+| Domain | Weight | Original base bank | Full mock |
 |---|---:|---:|---:|
 | 1 | 5% | 15 | 3 |
 | 2 | 10% | 30 | 7 |
@@ -73,13 +73,21 @@ Hamilton/largest-remainder rounding allocates `floor(65 × weight / 100)` then a
 | 10 | 10% | 30 | 6 |
 | Total | 100% | 300 | 65 |
 
+## Playlist additions
+
+The combined bank has **358 records**: 300 original base records plus 58 playlist adaptations (`YT-SPLK-001` through `YT-SPLK-058`). All 58 include a rationale for each option, source video/timestamp, and a primary documentation reference. Of these, 55 are author-reviewed practice items. Three supplemental items (licensing, bubble-chart selection, and scripted-input metadata) remain visible for study but are excluded from exams even if marked reviewed. Their objective IDs are related filing categories, not exact blueprint matches. The field-extraction permission and persistence questions are labeled as supporting their domain. Repeated playlist topics remain in the set.
+
+The CIM acceleration item is pinned to documented CIM 6.1 defaults. Historical exam snapshots remain unchanged; newly created sessions can use the added items. Regenerating the base bank preserves `question_bank/playlist_questions.json`. The additional bundle is applied once, so personal edits and deletions survive restarts.
+
 ## Content review and limitations
 
-The 300 original question records are derived from **100 authored concept cases, each with three related learning tasks**: choose a solution, evaluate its reasoning, and select both the solution and its supporting principle. They are 300 distinct stems, not 300 independent scenarios. Full mocks can contain related tasks from the same case. This supports repetition but can overestimate mastery; expanding with independently authored cases is a useful next improvement.
+The 300 original practice records were individually revised in October 2026 to match the direct four-option style of the playlist practice items. The 200 repeated reasoning and solution-plus-justification templates were replaced with questions about syntax, behavior, and applied examples. Weak unrelated distractors were replaced with specific misconceptions. The base answer keys are evenly distributed: 75 each for A, B, C, and D. Related concepts still recur across questions, so the bank does not represent 300 independent topics. The playlist set was also reviewed and 22 records received wording, distractor, or reference improvements.
 
-The author checked answers and rationales against primary Splunk documentation and the official blueprint. Structural validation covers unique IDs and stems, option IDs, answer cardinality, all 32 official objective mappings, and exact bank distribution. `question_bank/validation.json` records this audit. `verified` means author-reviewed against documentation; it does **not** mean official Splunk certification approval, independent subject-matter expert review, or execution in a real Splunk instance. Difficulty labels are editorial estimates. New/imported questions default to `needs_review` when no review status is supplied. In the editor, mark them reviewed only after checking both correct and incorrect option rationales.
+`question_bank/authored_questions.json` and `playlist_questions.json` are the canonical reviewed sources. `build_bank.py` validates and combines them. The prior bundled versions under `question_bank/review/` are migration baselines, not active question banks. The one-time content upgrade preserves question IDs, notes, bookmarks, soft-deletions, personal edits, and all historical exam snapshots. Its report is stored under the `bank_style_review_2026_10_v1` setting.
 
-No exam dumps were used as question content. The app is unaffiliated with Splunk. The default **80% score target is an unofficial study benchmark**, not an assertion about the official passing score. Readiness is the domain-weighted historical accuracy, with unattempted domains contributing zero. It is a study estimate rather than a pass predictor.
+The author checked answers and rationales against primary Splunk documentation and the official blueprint. Structural validation covers unique IDs and stems, option IDs, answer cardinality, all 32 official objective mappings, and the original base-bank distribution; additions have their own objective mapping and counts. `question_bank/validation.json` records this audit. `verified` means author-reviewed against documentation; it does **not** mean official Splunk certification approval, independent subject-matter expert review, or execution in a real Splunk instance. Difficulty labels are editorial estimates. New/imported questions default to `needs_review` when no review status is supplied. In the editor, mark them reviewed only after checking both correct and incorrect option rationales.
+
+The original base uses authored scenarios. The additional playlist questions are paraphrased study adaptations with newly written choices; the channel’s claims about actual exam content have not been verified. The app is unaffiliated with Splunk. The default **80% score target is an unofficial study benchmark**, not an assertion about the official passing score. Readiness is the domain-weighted historical accuracy, with unattempted domains contributing zero. It is a study estimate rather than a pass predictor.
 
 Duplicate detection normalizes punctuation, whitespace, and case in exact stems; it does not perform semantic duplicate detection. Challenge validation recognizes only the supported answer patterns shown after checking, so other valid equivalent SPL may be rejected. Streaks use UTC calendar days; display dates use the browser's locale/timezone. Domain coverage counts active bank entries answered in submitted sessions. Repeated attempts contribute to accuracy, while unique coverage does not double-count them. Unanswered items score incorrect, but are excluded from the answered-question accuracy denominator. Session scores include every item.
 
@@ -134,7 +142,7 @@ splunk-exam-lab/
 │   ├── migrations/       # Alembic versioned schema
 │   ├── data/             # local SQLite database created on initialization
 │   └── tests/            # isolated Pytest suite and browser-test API launcher
-├── question_bank/        # authored cases, generator, 300 records, validation report
+├── question_bank/        # authored cases, generator, 358 records, validation report
 ├── references/           # official PDF, extracted text, domain/objective JSON
 ├── docker-compose.yml
 ├── start.sh

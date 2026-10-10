@@ -32,7 +32,7 @@ def expire(db, exam):
 def create_exam(db, request):
     cfg=settings(db)
     questions=list(db.scalars(select(Question).where(Question.active==True)))
-    questions=[q for q in questions if q.content['review_status']=='verified']
+    questions=[q for q in questions if q.content['review_status']=='verified' and q.content.get('objective_alignment')!='supplemental']
     prior=list(db.scalars(select(ExamItem).join(Exam).where(Exam.status=='submitted')))
     if request.mode=='wrong':
         wrong={i.question_id for i in prior if not i.correct}

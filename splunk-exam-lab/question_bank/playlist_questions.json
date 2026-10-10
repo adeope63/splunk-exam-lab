@@ -1,0 +1,2431 @@
+[
+  {
+    "id": "YT-SPLK-001",
+    "domain_id": 10,
+    "objective_id": "10.2",
+    "text": "Where should you look up the CIM add-on’s supplied data models?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "CIM add-on manual",
+        "explanation": "Correct. The CIM manual documents the fields, tags, and datasets supplied by the add-on."
+      },
+      {
+        "id": "B",
+        "text": "License manager event log",
+        "explanation": "Incorrect. License logs record usage, not the semantic definitions of CIM models."
+      },
+      {
+        "id": "C",
+        "text": "Pivot visualization manual",
+        "explanation": "Incorrect. Pivot documentation covers building visualizations rather than the CIM model catalog."
+      },
+      {
+        "id": "D",
+        "text": "Forwarder installation guide",
+        "explanation": "Incorrect. Forwarder installation explains collection infrastructure, not CIM dataset definitions."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The CIM manual documents the fields, tags, and datasets supplied by the add-on.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-cloud-platform/common-information-model/6.0/data-models/cim-fields-per-associated-data-model",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 1 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=jRr3u1IUHvg&t=36s",
+    "source_question_number": 1
+  },
+  {
+    "id": "YT-SPLK-002",
+    "domain_id": 6,
+    "objective_id": "6.1",
+    "text": "Using the general tag syntax, how do you search for events tagged critical?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "eventtype=critical",
+        "explanation": "Incorrect. eventtype selects a named event type, which is a different knowledge object."
+      },
+      {
+        "id": "B",
+        "text": "tag=critical",
+        "explanation": "Correct. tag=critical searches events associated with that tag across applicable field/value pairs."
+      },
+      {
+        "id": "C",
+        "text": "tags=critical",
+        "explanation": "Incorrect. tags is not the general tag search keyword."
+      },
+      {
+        "id": "D",
+        "text": "sourcetype=critical",
+        "explanation": "Incorrect. sourcetype selects an event format/source category rather than a tag."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "tag=critical searches events associated with that tag across applicable field/value pairs.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.2/get-started-with-knowledge-objects/the-sequence-of-search-time-operations",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 1 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=jRr3u1IUHvg&t=79s",
+    "source_question_number": 2
+  },
+  {
+    "id": "YT-SPLK-003",
+    "domain_id": 10,
+    "objective_id": "10.2",
+    "text": "In the CIM 6.1 setup documentation, what is the default acceleration setting for the models supplied with the add-on?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Acceleration enabled for every model",
+        "explanation": "Incorrect. The pinned CIM 6.1 documentation specifies disabled by default."
+      },
+      {
+        "id": "B",
+        "text": "Acceleration enabled only for Authentication",
+        "explanation": "Incorrect. The documented default is not an Authentication-only exception."
+      },
+      {
+        "id": "C",
+        "text": "Acceleration disabled",
+        "explanation": "Correct. CIM 6.1 setup documentation says the supplied models have acceleration disabled by default. An administrator can enable it; this is not a claim about every configured deployment."
+      },
+      {
+        "id": "D",
+        "text": "Acceleration enabled only for Network Traffic",
+        "explanation": "Incorrect. The documented default is not a Network-Traffic-only exception."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "CIM 6.1 setup documentation says the supplied models have acceleration disabled by default. An administrator can enable it; this is not a claim about every configured deployment.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-cloud-platform/common-information-model/6.1/introduction/set-up-the-splunk-common-information-model-add-on",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 1 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=jRr3u1IUHvg&t=122s",
+    "source_question_number": 3
+  },
+  {
+    "id": "YT-SPLK-004",
+    "domain_id": 1,
+    "objective_id": "1.2",
+    "text": "How would you put a timechart into twelve-hour buckets?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "timespan=12",
+        "explanation": "Incorrect. timespan is not the timechart bucket-width argument and 12 has no explicit hour unit."
+      },
+      {
+        "id": "B",
+        "text": "span=12h",
+        "explanation": "Correct. span controls bucket width; 12h specifies twelve hours."
+      },
+      {
+        "id": "C",
+        "text": "duration=12h",
+        "explanation": "Incorrect. duration is not the timechart argument for bucket width."
+      },
+      {
+        "id": "D",
+        "text": "interval=12",
+        "explanation": "Incorrect. interval is not the timechart span argument."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "span controls bucket width; 12h specifies twelve hours.",
+    "difficulty": "easy",
+    "commands": [
+      "timechart"
+    ],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/spl-search-reference/10.4/search-commands/timechart",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 1 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=jRr3u1IUHvg&t=177s",
+    "source_question_number": 4
+  },
+  {
+    "id": "YT-SPLK-005",
+    "domain_id": 3,
+    "objective_id": "3.6",
+    "text": "When does grouping require transaction rather than a simple stats aggregation?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Counting events by one field",
+        "explanation": "Incorrect. stats count by a field meets a simple counting requirement without retaining raw transaction events."
+      },
+      {
+        "id": "B",
+        "text": "Calculating an average by host",
+        "explanation": "Incorrect. stats avg produces per-host averages efficiently; transaction is unnecessary for this alone."
+      },
+      {
+        "id": "C",
+        "text": "Grouping with explicit start and end conditions",
+        "explanation": "Correct. transaction can preserve and combine events according to start/end boundaries; this is a typical reason to prefer it over a simple aggregation."
+      },
+      {
+        "id": "D",
+        "text": "Finding a maximum numeric value",
+        "explanation": "Incorrect. stats max finds a maximum value; boundary-aware grouping is not required."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "transaction can preserve and combine events according to start/end boundaries; this is a typical reason to prefer it over a simple aggregation.",
+    "difficulty": "easy",
+    "commands": [
+      "transaction",
+      "stats"
+    ],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/spl-search-reference/9.0/search-commands/transaction",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 1 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=jRr3u1IUHvg&t=230s",
+    "source_question_number": 5
+  },
+  {
+    "id": "YT-SPLK-006",
+    "domain_id": 2,
+    "objective_id": "2.3",
+    "text": "Two fields already exist in the result schema. Which approach fills null amount values with 0 and null category values with \"unknown\"?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "fillnull value=0 amount followed by fillnull value=\"unknown\" category",
+        "explanation": "Correct. Each fillnull command specifies its own field list and replacement, so amount gets 0 while category gets unknown. The fields must exist in the result schema."
+      },
+      {
+        "id": "B",
+        "text": "fillnull value=\"unknown\" amount category",
+        "explanation": "Incorrect. One replacement of unknown would be applied to both fields, so amount would not get 0."
+      },
+      {
+        "id": "C",
+        "text": "fields amount category",
+        "explanation": "Incorrect. fields selects or removes fields; it does not replace null values."
+      },
+      {
+        "id": "D",
+        "text": "fillnull value=0 amount category",
+        "explanation": "Incorrect. One replacement of 0 would be applied to both fields, so category would not get unknown."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Each fillnull command specifies its own field list and replacement, so amount gets 0 while category gets unknown. The fields must exist in the result schema.",
+    "difficulty": "medium",
+    "commands": [
+      "fillnull"
+    ],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/spl-search-reference/10.2/search-commands/eval",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 1 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=jRr3u1IUHvg&t=268s",
+    "source_question_number": 6
+  },
+  {
+    "id": "YT-SPLK-007",
+    "domain_id": 4,
+    "objective_id": "4.1",
+    "text": "A report is shared with a colleague, but its custom field extraction remains visible only to the extraction owner. What permission issue explains this?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "The extraction has private permissions",
+        "explanation": "Correct. Sharing a report does not automatically share the extraction it depends on. A private extraction can prevent another user from evaluating that field."
+      },
+      {
+        "id": "B",
+        "text": "The extraction is globally readable by all users",
+        "explanation": "Incorrect. Global read access would not explain an extraction visible only to its owner."
+      },
+      {
+        "id": "C",
+        "text": "The extracted field must be indexed before it can be shared",
+        "explanation": "Incorrect. Search-time extractions can be shared as knowledge objects."
+      },
+      {
+        "id": "D",
+        "text": "Sharing the report automatically shares every dependent object",
+        "explanation": "Incorrect. Report permissions do not automatically grant access to every dependency."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Sharing a report does not automatically share the extraction it depends on. A private extraction can prevent another user from evaluating that field. This supports field-extraction knowledge generally rather than testing an extraction method directly.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.4/use-the-settings-pages-for-field-extractions-in-splunk-web/use-the-field-extractions-page",
+    "review_status": "verified",
+    "objective_alignment": "supporting",
+    "source": "YouTube playlist adaptation · Part 1 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=jRr3u1IUHvg&t=363s",
+    "source_question_number": 7
+  },
+  {
+    "id": "YT-SPLK-008",
+    "domain_id": 8,
+    "objective_id": "8.4",
+    "text": "How can a search workflow reuse the originating search’s time window?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Set a fixed All time range for every action",
+        "explanation": "Incorrect. This does not reuse the originating window."
+      },
+      {
+        "id": "B",
+        "text": "Use only the selected event timestamp with no surrounding range",
+        "explanation": "Incorrect. A single event time does not preserve the originating interval."
+      },
+      {
+        "id": "C",
+        "text": "Enable reuse of the originating search time range",
+        "explanation": "Correct. The Search workflow configuration can reuse the time range of the search that produced the event field listing."
+      },
+      {
+        "id": "D",
+        "text": "Set the action to Last 15 minutes regardless of the original search",
+        "explanation": "Incorrect. A fixed recent range may differ from the originating window."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "The Search workflow configuration can reuse the time range of the search that produced the event field listing.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.4/workflow-actions/set-up-a-search-workflow-action",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 1 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=jRr3u1IUHvg&t=430s",
+    "source_question_number": 8
+  },
+  {
+    "id": "YT-SPLK-009",
+    "domain_id": 3,
+    "objective_id": "3.1",
+    "text": "Which transaction field identifies an evicted/open transaction?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "duration=-1",
+        "explanation": "Incorrect. duration is elapsed time, not a flag for eviction; a negative duration is not the required marker."
+      },
+      {
+        "id": "B",
+        "text": "closed_txn=1",
+        "explanation": "Incorrect. closed_txn=1 indicates a closed/non-evicted transaction."
+      },
+      {
+        "id": "C",
+        "text": "eventcount=0",
+        "explanation": "Incorrect. eventcount is a member-event count, not an eviction indicator."
+      },
+      {
+        "id": "D",
+        "text": "closed_txn=0",
+        "explanation": "Correct. Evicted transactions have closed_txn=0. Context matters: unconstrained transactions can also remain open, so zero alone is not proof of a particular memory eviction cause."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Evicted transactions have closed_txn=0. Context matters: unconstrained transactions can also remain open, so zero alone is not proof of a particular memory eviction cause.",
+    "difficulty": "medium",
+    "commands": [
+      "transaction"
+    ],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/spl-search-reference/9.0/search-commands/transaction",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 1 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=jRr3u1IUHvg&t=480s",
+    "source_question_number": 9
+  },
+  {
+    "id": "YT-SPLK-010",
+    "domain_id": 7,
+    "objective_id": "7.3",
+    "text": "A macro defines an argument named field. Which token substitutes that argument in the macro definition?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "{field}",
+        "explanation": "Incorrect. Curly braces are not the macro-definition argument token syntax."
+      },
+      {
+        "id": "B",
+        "text": "$field$",
+        "explanation": "Correct. Macro definitions substitute named arguments using dollar-sign tokens such as $field$."
+      },
+      {
+        "id": "C",
+        "text": "[field]",
+        "explanation": "Incorrect. Square brackets denote subsearch syntax in SPL, not macro argument substitution."
+      },
+      {
+        "id": "D",
+        "text": "%field%",
+        "explanation": "Incorrect. Percent signs do not delimit a named macro argument."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Macro definitions substitute named arguments using dollar-sign tokens such as $field$.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-cloud-platform/manage-knowledge-objects/knowledge-management-manual/10.6/search-macros/define-search-macros-in-settings",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 2 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=FybQkK-QyYk&t=37s",
+    "source_question_number": 10
+  },
+  {
+    "id": "YT-SPLK-011",
+    "domain_id": 10,
+    "objective_id": "10.1",
+    "text": "Under traditional Splunk Enterprise ingestion-volume licensing, which listed data normally counts toward licensed daily ingestion?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "An indexer cluster's replicated copies",
+        "explanation": "Incorrect. Cluster replication copies already-indexed data; it is not a second new ingestion for ordinary volume accounting."
+      },
+      {
+        "id": "B",
+        "text": "Summary results written with the standard summary-index mechanism",
+        "explanation": "Incorrect. Standard summary-index output has special licensing treatment; it is not equivalent to fresh external event ingestion."
+      },
+      {
+        "id": "C",
+        "text": "Newly indexed Windows event logs",
+        "explanation": "Correct. Under traditional volume licensing, newly ingested Windows event data is ordinarily chargeable. This is supplemental and requires checking the applicable license model."
+      },
+      {
+        "id": "D",
+        "text": "Splunk's own logs in _internal",
+        "explanation": "Incorrect. Splunk internal logs in _internal are ordinarily exempt from ingestion-volume accounting."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Under traditional volume licensing, newly ingested Windows event data is ordinarily chargeable. This is supplemental and requires checking the applicable license model. Supplemental topic: the assigned objective is a related filing category, not a direct exam-objective match. Excluded from scored practice.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/data-management/common-information-model/6.2/using-the-common-information-model/use-the-cim-to-normalize-data-at-search-time",
+    "review_status": "needs_review",
+    "objective_alignment": "supplemental",
+    "source": "YouTube playlist adaptation · Part 2 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=FybQkK-QyYk&t=54s",
+    "source_question_number": 11
+  },
+  {
+    "id": "YT-SPLK-012",
+    "domain_id": 5,
+    "objective_id": "5.2",
+    "text": "Which earlier search-time field object can supply a calculated field?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "An eventtype field applied later",
+        "explanation": "Incorrect. Event types are applied later in search-time processing, so that generated field is not an earlier calculated-field input."
+      },
+      {
+        "id": "B",
+        "text": "A field added later by an automatic lookup",
+        "explanation": "Incorrect. Automatic lookups occur after calculated fields; their newly added fields are unavailable at this earlier stage."
+      },
+      {
+        "id": "C",
+        "text": "A field alias",
+        "explanation": "Correct. Field aliases are applied before calculated fields, so a calculated-field expression can refer to an aliased field."
+      },
+      {
+        "id": "D",
+        "text": "A tag applied later",
+        "explanation": "Incorrect. Tags are applied later in the sequence and are not available as earlier inputs to a calculated-field definition."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Field aliases are applied before calculated fields, so a calculated-field expression can refer to an aliased field.",
+    "difficulty": "medium",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.2/get-started-with-knowledge-objects/the-sequence-of-search-time-operations",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 2 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=FybQkK-QyYk&t=88s",
+    "source_question_number": 12
+  },
+  {
+    "id": "YT-SPLK-013",
+    "domain_id": 6,
+    "objective_id": "6.2",
+    "text": "What time-range distinction separates event types from saved reports?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "An event type does not save a time range",
+        "explanation": "Correct. An event type classifies events by a search expression rather than storing the report time range."
+      },
+      {
+        "id": "B",
+        "text": "An event type saves the same time window as its creating search",
+        "explanation": "Incorrect. An event type definition does not store that search time range."
+      },
+      {
+        "id": "C",
+        "text": "An event type always searches only the last hour",
+        "explanation": "Incorrect. There is no universal one-hour event-type range."
+      },
+      {
+        "id": "D",
+        "text": "An event type restricts all future searches to All time",
+        "explanation": "Incorrect. It classifies events without imposing such a universal time range."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "An event type classifies events by a search expression rather than storing the report time range.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/9.1/event-types/about-event-types",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 2 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=FybQkK-QyYk&t=123s",
+    "source_question_number": 13
+  },
+  {
+    "id": "YT-SPLK-014",
+    "domain_id": 9,
+    "objective_id": "9.3",
+    "text": "Which root dataset uses a simple event-search constraint rather than a full search pipeline or transaction definition?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Root search dataset using its full search string",
+        "explanation": "Incorrect. A root search dataset uses a search definition rather than this simple root event constraint."
+      },
+      {
+        "id": "B",
+        "text": "Root transaction dataset using a transaction definition",
+        "explanation": "Incorrect. A root transaction dataset is defined through its grouping configuration."
+      },
+      {
+        "id": "C",
+        "text": "Root event dataset",
+        "explanation": "Correct. A root event dataset uses a constraint to select the events represented by the dataset."
+      },
+      {
+        "id": "D",
+        "text": "A child dataset that replaces all inherited constraints",
+        "explanation": "Incorrect. A child narrows inherited data; it is not a root dataset replacing the parent constraints."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "A root event dataset uses a constraint to select the events represented by the dataset.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.4/build-a-data-model/design-data-models",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 2 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=FybQkK-QyYk&t=166s",
+    "source_question_number": 14
+  },
+  {
+    "id": "YT-SPLK-015",
+    "domain_id": 6,
+    "objective_id": "6.2",
+    "text": "Which expression matches the event type named web_errors?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "eventtype=web_errors",
+        "explanation": "Correct. eventtype=web_errors selects events classified by that event type."
+      },
+      {
+        "id": "B",
+        "text": "eventtype(web_errors)",
+        "explanation": "Incorrect. eventtype is not invoked as a function in this selection syntax."
+      },
+      {
+        "id": "C",
+        "text": "sourcetype=eventtype",
+        "explanation": "Incorrect. This tests the literal sourcetype value eventtype rather than the web_errors event type."
+      },
+      {
+        "id": "D",
+        "text": "tag=web_errors",
+        "explanation": "Incorrect. tag=web_errors searches a tag, which need not identify the named event type."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "eventtype=web_errors selects events classified by that event type.",
+    "difficulty": "easy",
+    "commands": [
+      "search"
+    ],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/9.1/event-types/about-event-types",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 2 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=FybQkK-QyYk&t=202s",
+    "source_question_number": 15
+  },
+  {
+    "id": "YT-SPLK-016",
+    "domain_id": 1,
+    "objective_id": "1.2",
+    "text": "How can a timechart retain every split-by series?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "limit=0",
+        "explanation": "Correct. limit=0 disables split-by series filtering, allowing all split-by values to be retained."
+      },
+      {
+        "id": "B",
+        "text": "limit=none",
+        "explanation": "Incorrect. none is not the documented numeric value for this purpose."
+      },
+      {
+        "id": "C",
+        "text": "limit=all",
+        "explanation": "Incorrect. all is not the documented numeric value that disables series filtering."
+      },
+      {
+        "id": "D",
+        "text": "limit=*",
+        "explanation": "Incorrect. An asterisk is not the documented limit value that retains all series."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "limit=0 disables split-by series filtering, allowing all split-by values to be retained.",
+    "difficulty": "easy",
+    "commands": [
+      "timechart"
+    ],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/spl-search-reference/10.4/search-commands/timechart",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 2 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=FybQkK-QyYk&t=245s",
+    "source_question_number": 16
+  },
+  {
+    "id": "YT-SPLK-017",
+    "domain_id": 7,
+    "objective_id": "7.1",
+    "text": "What does a macro let you reuse?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "An event type with a piped eval command",
+        "explanation": "Incorrect. Event types do not represent arbitrary reusable SPL pipelines."
+      },
+      {
+        "id": "B",
+        "text": "An alias that computes several derived fields",
+        "explanation": "Incorrect. An alias supplies a name rather than expanding a pipeline."
+      },
+      {
+        "id": "C",
+        "text": "A reusable SPL fragment",
+        "explanation": "Correct. A macro expands to a reusable SPL fragment and can optionally accept arguments."
+      },
+      {
+        "id": "D",
+        "text": "A tag that executes a search when referenced",
+        "explanation": "Incorrect. A tag is a label rather than an executable SPL definition."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "A macro expands to a reusable SPL fragment and can optionally accept arguments.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://docs.splunk.com/Documentation/Splunk/9.4.2/Knowledge/Definesearchmacros",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 2 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=FybQkK-QyYk&t=281s",
+    "source_question_number": 17
+  },
+  {
+    "id": "YT-SPLK-018",
+    "domain_id": 10,
+    "objective_id": "10.3",
+    "text": "Which knowledge object can normalize vendor-specific field values through a table-based CIM mapping?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Field alias alone",
+        "explanation": "Incorrect. An alias can normalize an equivalent name but does not translate values using a table."
+      },
+      {
+        "id": "B",
+        "text": "Lookups",
+        "explanation": "Correct. Lookups can map vendor values or enrich events so they match CIM expectations."
+      },
+      {
+        "id": "C",
+        "text": "Tag alone",
+        "explanation": "Incorrect. A tag classifies field-value pairs rather than performing the table mapping."
+      },
+      {
+        "id": "D",
+        "text": "Event type alone",
+        "explanation": "Incorrect. Classification does not perform a table-based value translation."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Lookups can map vendor values or enrich events so they match CIM expectations.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/common-information-model/6.4/using-the-common-information-model/use-the-cim-to-normalize-data-at-search-time",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 2 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=FybQkK-QyYk&t=330s",
+    "source_question_number": 18
+  },
+  {
+    "id": "YT-SPLK-019",
+    "domain_id": 2,
+    "objective_id": "2.2",
+    "text": "How does an explicit search command relate to the initial search expression?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "It filters available results using search-expression rules",
+        "explanation": "Correct. Both the initial implicit search and a later explicit search use search-expression rules on the fields/events available at that point."
+      },
+      {
+        "id": "B",
+        "text": "It makes every comparison case sensitive",
+        "explanation": "Incorrect. search field-value matching is normally case insensitive; use CASE for a case-sensitive match."
+      },
+      {
+        "id": "C",
+        "text": "It only works before the first pipe",
+        "explanation": "Incorrect. An explicit search command can filter later in the pipeline."
+      },
+      {
+        "id": "D",
+        "text": "It restores all fields removed by earlier commands",
+        "explanation": "Incorrect. A later filter cannot restore fields discarded by an earlier transforming or projection command."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Both the initial implicit search and a later explicit search use search-expression rules on the fields/events available at that point.",
+    "difficulty": "medium",
+    "commands": [
+      "search"
+    ],
+    "reference": "https://help.splunk.com/en/splunk-cloud-platform/search/search-reference/10.4.2604/search-commands/search",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 2 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=FybQkK-QyYk&t=370s",
+    "source_question_number": 19
+  },
+  {
+    "id": "YT-SPLK-020",
+    "domain_id": 3,
+    "objective_id": "3.6",
+    "text": "Which listed command is generally preferred for efficient field-based aggregation?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "join",
+        "explanation": "Incorrect. join combines result sets using matching keys; it is not the default efficient aggregation command."
+      },
+      {
+        "id": "B",
+        "text": "transaction",
+        "explanation": "Incorrect. transaction preserves grouped event content and boundary semantics, creating unnecessary overhead for simple aggregation."
+      },
+      {
+        "id": "C",
+        "text": "append",
+        "explanation": "Incorrect. append adds rows from another result set; it does not itself aggregate by a field."
+      },
+      {
+        "id": "D",
+        "text": "stats",
+        "explanation": "Correct. stats aggregates by fields without building raw-event transactions, making it the usual choice when only grouped measures are needed."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "stats aggregates by fields without building raw-event transactions, making it the usual choice when only grouped measures are needed.",
+    "difficulty": "easy",
+    "commands": [
+      "stats",
+      "transaction"
+    ],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/spl-search-reference/9.0/search-commands/transaction",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 2 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=FybQkK-QyYk&t=410s",
+    "source_question_number": 20
+  },
+  {
+    "id": "YT-SPLK-021",
+    "domain_id": 8,
+    "objective_id": "8.1",
+    "text": "Which workflow action runs another search from event field values?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "POST workflow action",
+        "explanation": "Incorrect. A POST workflow submits an HTTP POST request rather than starting this configured SPL search."
+      },
+      {
+        "id": "B",
+        "text": "Search workflow action",
+        "explanation": "Correct. A Search workflow launches a secondary SPL search using values from the originating event."
+      },
+      {
+        "id": "C",
+        "text": "Lookup table definition",
+        "explanation": "Incorrect. A lookup definition maps/enriches fields; it is not a selectable secondary Search workflow."
+      },
+      {
+        "id": "D",
+        "text": "GET workflow action",
+        "explanation": "Incorrect. A GET workflow opens a URL/HTTP GET request; it is not the secondary SPL Search action."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "A Search workflow launches a secondary SPL search using values from the originating event.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/9.1/workflow-actions/about-workflow-actions-in-splunk-web",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 2 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=FybQkK-QyYk&t=442s",
+    "source_question_number": 21
+  },
+  {
+    "id": "YT-SPLK-022",
+    "domain_id": 5,
+    "objective_id": "5.1",
+    "text": "Which statement correctly describes a field alias?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "An alias adds another field name and preserves the original",
+        "explanation": "Correct. A field alias exposes an existing field under an additional name while preserving the original. Field names remain case sensitive."
+      },
+      {
+        "id": "B",
+        "text": "An alias renames every raw event at index time",
+        "explanation": "Incorrect. Field aliases operate at search time and do not rewrite indexed raw events."
+      },
+      {
+        "id": "C",
+        "text": "An alias always deletes the original field",
+        "explanation": "Incorrect. Aliasing does not remove the original field; rename would be a different operation."
+      },
+      {
+        "id": "D",
+        "text": "Alias names are always case insensitive",
+        "explanation": "Incorrect. Alias field names follow case-sensitive field-name handling, so this blanket case-insensitive statement is false."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "A field alias exposes an existing field under an additional name while preserving the original. Field names remain case sensitive.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.6/field-aliases/create-field-aliases-in-splunk-web",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 2 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=FybQkK-QyYk&t=469s",
+    "source_question_number": 22
+  },
+  {
+    "id": "YT-SPLK-023",
+    "domain_id": 9,
+    "objective_id": "9.1",
+    "text": "What does Pivot help create?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Field extractions configured from raw text",
+        "explanation": "Incorrect. Extraction defines fields rather than producing model-based reports and dashboards."
+      },
+      {
+        "id": "B",
+        "text": "Workflow actions defined for event menus",
+        "explanation": "Incorrect. Actions provide contextual links or searches rather than Pivot report construction."
+      },
+      {
+        "id": "C",
+        "text": "Reports and dashboards from data model datasets",
+        "explanation": "Correct. Pivot builds reports and visualizations over data model datasets without requiring users to compose the full SPL."
+      },
+      {
+        "id": "D",
+        "text": "Search macro definitions with positional arguments",
+        "explanation": "Incorrect. Macros reuse SPL rather than providing the Pivot graphical model-report interface."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Pivot builds reports and visualizations over data model datasets without requiring users to compose the full SPL.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-cloud-platform/manage-knowledge-objects/knowledge-management-manual/9.3.2408/build-a-data-model/about-data-models",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 2 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=FybQkK-QyYk&t=515s",
+    "source_question_number": 23
+  },
+  {
+    "id": "YT-SPLK-024",
+    "domain_id": 4,
+    "objective_id": "4.1",
+    "text": "Do custom extractions saved with Field Extractor persist?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "They require redefining in every SPL query",
+        "explanation": "Incorrect. A saved extraction can be reused; redefining it in every SPL query is unnecessary."
+      },
+      {
+        "id": "B",
+        "text": "They persist as search-time knowledge objects",
+        "explanation": "Correct. Saving a Field Extractor extraction creates a persistent search-time knowledge object that can be permissioned and reused."
+      },
+      {
+        "id": "C",
+        "text": "They disappear after every search",
+        "explanation": "Incorrect. Saved extraction definitions survive individual searches; they are not temporary per-search values."
+      },
+      {
+        "id": "D",
+        "text": "They necessarily rewrite indexed raw data",
+        "explanation": "Incorrect. A search-time extraction interprets stored events rather than necessarily rewriting indexed _raw."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Saving a Field Extractor extraction creates a persistent search-time knowledge object that can be permissioned and reused. This supports field-extraction knowledge generally rather than testing an extraction method directly.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.4/use-the-settings-pages-for-field-extractions-in-splunk-web/use-the-field-extractions-page",
+    "review_status": "verified",
+    "objective_alignment": "supporting",
+    "source": "YouTube playlist adaptation · Part 2 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=FybQkK-QyYk&t=555s",
+    "source_question_number": 24
+  },
+  {
+    "id": "YT-SPLK-025",
+    "domain_id": 3,
+    "objective_id": "3.2",
+    "text": "Events contain numeric sales and product_name. Which command totals sales for each product?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "stats count AS total_sales BY product_name",
+        "explanation": "Incorrect. count counts matching events rather than summing their sales values."
+      },
+      {
+        "id": "B",
+        "text": "stats avg(sales) AS total_sales BY product_name",
+        "explanation": "Incorrect. avg computes the mean sale value rather than the total."
+      },
+      {
+        "id": "C",
+        "text": "stats sum(sales) AS total_sales BY product_name",
+        "explanation": "Correct. sum(sales) totals the numeric measure; BY product_name creates one group for each product."
+      },
+      {
+        "id": "D",
+        "text": "stats sum(sales) AS total_sales",
+        "explanation": "Incorrect. Without BY product_name this produces a combined total rather than a total per product."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "sum(sales) totals the numeric measure; BY product_name creates one group for each product.",
+    "difficulty": "medium",
+    "commands": [
+      "stats"
+    ],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/spl-search-reference/9.0/search-commands/transaction",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 3 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=h3SB_6wgTPo&t=35s",
+    "source_question_number": 25
+  },
+  {
+    "id": "YT-SPLK-026",
+    "domain_id": 10,
+    "objective_id": "10.2",
+    "text": "Which group contains only categories listed in the CIM 6.0 data model reference?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Email, Dashboard Layouts, and User Permissions",
+        "explanation": "Incorrect. Email is a model category, but Dashboard Layouts and User Permissions are not categories in that model catalog."
+      },
+      {
+        "id": "B",
+        "text": "Alerts, Email, and Databases",
+        "explanation": "Correct. Alerts, Email, and Databases are all model categories listed in the cited CIM 6.0 reference."
+      },
+      {
+        "id": "C",
+        "text": "Alerts, Dashboard Layouts, and Search Job Priorities",
+        "explanation": "Incorrect. Alerts is a model category, but Dashboard Layouts and Search Job Priorities are not."
+      },
+      {
+        "id": "D",
+        "text": "Databases, License Pools, and Search Job Priorities",
+        "explanation": "Incorrect. Databases is a model category, but License Pools and Search Job Priorities are not."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Alerts, Email, and Databases are all model categories listed in the cited CIM 6.0 reference.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-cloud-platform/common-information-model/6.0/data-models/cim-fields-per-associated-data-model",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 3 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=h3SB_6wgTPo&t=91s",
+    "source_question_number": 26
+  },
+  {
+    "id": "YT-SPLK-027",
+    "domain_id": 8,
+    "objective_id": "8.4",
+    "text": "Whose permissions apply to a workflow-generated search?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "The creator of the workflow object in every case",
+        "explanation": "Incorrect. The launched search runs with the permissions of its executing user."
+      },
+      {
+        "id": "B",
+        "text": "The user executing the workflow search",
+        "explanation": "Correct. The secondary search runs with the permissions of its executing user; a workflow does not grant the creator’s privileges."
+      },
+      {
+        "id": "C",
+        "text": "The owner of the report definition in every case",
+        "explanation": "Incorrect. Report ownership does not replace the executing workflow user for this search."
+      },
+      {
+        "id": "D",
+        "text": "The administrator role regardless of the caller",
+        "explanation": "Incorrect. The action does not automatically grant administrator search access."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The secondary search runs with the permissions of its executing user; a workflow does not grant the creator’s privileges.",
+    "difficulty": "medium",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.4/workflow-actions/set-up-a-search-workflow-action",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 3 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=h3SB_6wgTPo&t=121s",
+    "source_question_number": 27
+  },
+  {
+    "id": "YT-SPLK-028",
+    "domain_id": 1,
+    "objective_id": "1.2",
+    "text": "Adapted chart question: Which command produces event counts over time with a separate series for each status value?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "stats count BY status",
+        "explanation": "Incorrect. stats count BY status produces per-status totals without time buckets."
+      },
+      {
+        "id": "B",
+        "text": "table _time status",
+        "explanation": "Incorrect. table lists fields from events without computing bucketed counts."
+      },
+      {
+        "id": "C",
+        "text": "timechart count BY status",
+        "explanation": "Correct. timechart uses time on its horizontal grouping axis, count for the measure, and BY status for separate series."
+      },
+      {
+        "id": "D",
+        "text": "chart count OVER status BY host",
+        "explanation": "Incorrect. chart over status by host uses status and host dimensions, not time buckets."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "timechart uses time on its horizontal grouping axis, count for the measure, and BY status for separate series.",
+    "difficulty": "medium",
+    "commands": [
+      "timechart"
+    ],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/spl-search-reference/10.4/search-commands/timechart",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 3 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=h3SB_6wgTPo&t=174s",
+    "source_question_number": 28
+  },
+  {
+    "id": "YT-SPLK-029",
+    "domain_id": 3,
+    "objective_id": "3.1",
+    "text": "What result does transaction build from related events?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "One retained representative event for each key",
+        "explanation": "Incorrect. That describes dedup behavior rather than combining related raw events."
+      },
+      {
+        "id": "B",
+        "text": "Only an aggregate count for each key",
+        "explanation": "Incorrect. A stats count result does not preserve the transaction event grouping."
+      },
+      {
+        "id": "C",
+        "text": "A combined event representing related input events",
+        "explanation": "Correct. transaction combines related member events into one transaction result while preserving combined event content and adding metadata."
+      },
+      {
+        "id": "D",
+        "text": "A set of unrelated events joined only by output position",
+        "explanation": "Incorrect. Transaction correlates events through configured keys and constraints."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "transaction combines related member events into one transaction result while preserving combined event content and adding metadata.",
+    "difficulty": "easy",
+    "commands": [
+      "transaction"
+    ],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/spl-search-reference/9.0/search-commands/transaction",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 3 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=h3SB_6wgTPo&t=278s",
+    "source_question_number": 29
+  },
+  {
+    "id": "YT-SPLK-030",
+    "domain_id": 9,
+    "objective_id": "9.1",
+    "text": "How are Pivot and data models connected?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pivot defines only the model acceleration schedule",
+        "explanation": "Incorrect. Acceleration configuration is not the central Pivot-to-dataset relationship."
+      },
+      {
+        "id": "B",
+        "text": "Data models provide only saved chart formatting",
+        "explanation": "Incorrect. They define datasets and attributes rather than merely presentation."
+      },
+      {
+        "id": "C",
+        "text": "Pivot extracts every field directly without a dataset definition",
+        "explanation": "Incorrect. Pivot uses the selected data model dataset."
+      },
+      {
+        "id": "D",
+        "text": "Data models supply the datasets used by Pivot",
+        "explanation": "Correct. Data models define the constrained datasets and fields that Pivot analyzes."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Data models define the constrained datasets and fields that Pivot analyzes.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-cloud-platform/manage-knowledge-objects/knowledge-management-manual/9.3.2408/build-a-data-model/about-data-models",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 3 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=h3SB_6wgTPo&t=319s",
+    "source_question_number": 30
+  },
+  {
+    "id": "YT-SPLK-031",
+    "domain_id": 8,
+    "objective_id": "8.4",
+    "text": "What time-window choice can be made when configuring a search workflow?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "The source-type extraction delimiter",
+        "explanation": "Incorrect. Delimiter settings do not define a secondary search time range."
+      },
+      {
+        "id": "B",
+        "text": "The argument count of a macro",
+        "explanation": "Incorrect. Macro arity does not determine the action time interval."
+      },
+      {
+        "id": "C",
+        "text": "The transaction maxevents setting",
+        "explanation": "Incorrect. A transaction count limit does not configure the action time window."
+      },
+      {
+        "id": "D",
+        "text": "The secondary search's time range",
+        "explanation": "Correct. A Search workflow can specify the secondary search’s time range or reuse the originating range."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "A Search workflow can specify the secondary search’s time range or reuse the originating range.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.4/workflow-actions/set-up-a-search-workflow-action",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 3 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=h3SB_6wgTPo&t=362s",
+    "source_question_number": 31
+  },
+  {
+    "id": "YT-SPLK-032",
+    "domain_id": 1,
+    "objective_id": "1.1",
+    "text": "Which transforming commands share statistical aggregation functions?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "stats, chart, timechart",
+        "explanation": "Correct. stats, chart, and timechart use statistical aggregation functions such as count, sum, and avg. Their result layouts differ."
+      },
+      {
+        "id": "B",
+        "text": "inputlookup, lookup, outputlookup",
+        "explanation": "Incorrect. Lookup commands read or apply lookup data; they do not provide the stats/chart/timechart aggregation family."
+      },
+      {
+        "id": "C",
+        "text": "search, where, transaction",
+        "explanation": "Incorrect. These commands have different expression/correlation purposes and do not share the same transforming aggregation function set."
+      },
+      {
+        "id": "D",
+        "text": "table, fields, dedup",
+        "explanation": "Incorrect. table and fields project columns; dedup removes duplicate results rather than providing that aggregation function family."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "stats, chart, and timechart use statistical aggregation functions such as count, sum, and avg. Their result layouts differ.",
+    "difficulty": "easy",
+    "commands": [
+      "stats",
+      "chart",
+      "timechart"
+    ],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/spl-search-reference/10.4/search-commands/chart",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 3 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=h3SB_6wgTPo&t=410s",
+    "source_question_number": 32
+  },
+  {
+    "id": "YT-SPLK-033",
+    "domain_id": 2,
+    "objective_id": "2.1",
+    "text": "Which is a valid use of eval?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Compute a derived field using a conditional expression",
+        "explanation": "Correct. eval can assign a derived field from an expression, including conditional functions such as if or case."
+      },
+      {
+        "id": "B",
+        "text": "Filter out results solely by assigning a Boolean field",
+        "explanation": "Incorrect. eval computes a field; it does not remove results as where does."
+      },
+      {
+        "id": "C",
+        "text": "Group raw events into transactions with start and end boundaries",
+        "explanation": "Incorrect. transaction performs that grouping."
+      },
+      {
+        "id": "D",
+        "text": "Assign a tag to a field-value pair as a knowledge object",
+        "explanation": "Incorrect. Tag configuration is distinct from an eval field calculation."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "eval can assign a derived field from an expression, including conditional functions such as if or case.",
+    "difficulty": "easy",
+    "commands": [
+      "eval"
+    ],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/spl-search-reference/10.2/search-commands/eval",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 3 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=h3SB_6wgTPo&t=451s",
+    "source_question_number": 33
+  },
+  {
+    "id": "YT-SPLK-034",
+    "domain_id": 1,
+    "objective_id": "1.2",
+    "text": "Which timechart option controls time buckets?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "span",
+        "explanation": "Correct. span sets the width of time buckets used by timechart."
+      },
+      {
+        "id": "B",
+        "text": "duration",
+        "explanation": "Incorrect. duration is transaction elapsed-time metadata, not timechart bucket sizing."
+      },
+      {
+        "id": "C",
+        "text": "eventcount",
+        "explanation": "Incorrect. eventcount describes transaction membership, not time buckets."
+      },
+      {
+        "id": "D",
+        "text": "interval",
+        "explanation": "Incorrect. interval is not the timechart bucket-width argument."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "span sets the width of time buckets used by timechart.",
+    "difficulty": "easy",
+    "commands": [
+      "timechart"
+    ],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/spl-search-reference/10.4/search-commands/timechart",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 3 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=h3SB_6wgTPo&t=489s",
+    "source_question_number": 34
+  },
+  {
+    "id": "YT-SPLK-035",
+    "domain_id": 9,
+    "objective_id": "9.1",
+    "text": "How does Pivot expose aspects of a data model?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Editing the source extraction regex for every Pivot operation",
+        "explanation": "Incorrect. Pivot uses the model definition rather than requiring a new extraction per report."
+      },
+      {
+        "id": "B",
+        "text": "Replacing the dataset constraints with chart labels",
+        "explanation": "Incorrect. Labels do not define the event subset."
+      },
+      {
+        "id": "C",
+        "text": "Requiring the user to type every generated SPL command",
+        "explanation": "Incorrect. Pivot provides a graphical reporting interface."
+      },
+      {
+        "id": "D",
+        "text": "Creating visualizations from a chosen model dataset",
+        "explanation": "Correct. Pivot presents model dataset dimensions and measures through visualizations."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Pivot presents model dataset dimensions and measures through visualizations.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-cloud-platform/manage-knowledge-objects/knowledge-management-manual/9.3.2408/build-a-data-model/about-data-models",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 3 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=h3SB_6wgTPo&t=528s",
+    "source_question_number": 35
+  },
+  {
+    "id": "YT-SPLK-036",
+    "domain_id": 9,
+    "objective_id": "9.2",
+    "text": "Which edit is available for a non-inherited auto-extracted field in a data model?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Change its model display name or its assigned data type",
+        "explanation": "Correct. For a non-inherited auto-extracted field, the model editor can change its display name or correct its assigned type."
+      },
+      {
+        "id": "B",
+        "text": "Changing its type rewrites every raw event",
+        "explanation": "Incorrect. Changing a model field type does not rewrite all stored raw events."
+      },
+      {
+        "id": "C",
+        "text": "Changing its display name renames the indexed field",
+        "explanation": "Incorrect. The display name is model-local; changing it does not rename the indexed field."
+      },
+      {
+        "id": "D",
+        "text": "An auto-extracted field's type can never be changed",
+        "explanation": "Incorrect. An incorrectly assigned auto-extracted type can be corrected; it is not permanently fixed."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "For a non-inherited auto-extracted field, the model editor can change its display name or correct its assigned type.",
+    "difficulty": "medium",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-cloud-platform/manage-knowledge-objects/knowledge-management-manual/9.3.2411/define-data-model-dataset-fields/define-dataset-fields",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 3 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=h3SB_6wgTPo&t=573s",
+    "source_question_number": 36
+  },
+  {
+    "id": "YT-SPLK-037",
+    "domain_id": 1,
+    "objective_id": "1.1",
+    "text": "Which chart represents two positions plus a third numeric measure?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Bubble chart",
+        "explanation": "Correct. A bubble chart uses two axes and bubble size to encode a third numeric measure. This is supplemental visualization knowledge."
+      },
+      {
+        "id": "B",
+        "text": "Single-value display",
+        "explanation": "Incorrect. A single-value display focuses on one measure, not three numeric dimensions."
+      },
+      {
+        "id": "C",
+        "text": "Standard two-dimensional line chart",
+        "explanation": "Incorrect. A standard line chart uses two axes and does not encode a third measure through bubble size."
+      },
+      {
+        "id": "D",
+        "text": "Pie chart",
+        "explanation": "Incorrect. A pie chart principally shows proportions and does not provide two positional axes plus bubble size."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "A bubble chart uses two axes and bubble size to encode a third numeric measure. This is supplemental visualization knowledge. Supplemental topic: the assigned objective is a related filing category, not a direct exam-objective match. Excluded from scored practice.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/spl-search-reference/10.4/search-commands/chart",
+    "review_status": "needs_review",
+    "objective_alignment": "supplemental",
+    "source": "YouTube playlist adaptation · Part 3 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=h3SB_6wgTPo&t=619s",
+    "source_question_number": 37
+  },
+  {
+    "id": "YT-SPLK-038",
+    "domain_id": 10,
+    "objective_id": "10.1",
+    "text": "What is CIM’s central normalization purpose?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Only rename fields without checking their meaning",
+        "explanation": "Incorrect. CIM normalization includes semantic meaning and classification."
+      },
+      {
+        "id": "B",
+        "text": "Automatically make every custom source compliant on installation",
+        "explanation": "Incorrect. Source mappings may still be required."
+      },
+      {
+        "id": "C",
+        "text": "Change the raw source type to the model name",
+        "explanation": "Incorrect. A source-type rename does not establish normalized fields and categories."
+      },
+      {
+        "id": "D",
+        "text": "Normalize heterogeneous data to common fields and categories",
+        "explanation": "Correct. CIM defines common fields and categories so semantically similar events from different vendors can be analyzed consistently."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "CIM defines common fields and categories so semantically similar events from different vendors can be analyzed consistently.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-cloud-platform/common-information-model/6.0/data-models/cim-fields-per-associated-data-model",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 4 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=yCCvOkPSJuw&t=34s",
+    "source_question_number": 38
+  },
+  {
+    "id": "YT-SPLK-039",
+    "domain_id": 9,
+    "objective_id": "9.2",
+    "text": "To select a named dataset with the datamodel command, which pair of identifiers do you supply?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Only the root index name",
+        "explanation": "Incorrect. An index name alone does not identify the requested model and dataset."
+      },
+      {
+        "id": "B",
+        "text": "The model name and dataset name",
+        "explanation": "Correct. The model and dataset identifiers identify which dataset the datamodel command should select. Additional syntax depends on the requested operation."
+      },
+      {
+        "id": "C",
+        "text": "Only the model name with no named dataset selection",
+        "explanation": "Incorrect. The question asks for a particular named dataset within the model."
+      },
+      {
+        "id": "D",
+        "text": "Only the dataset display label with no model context",
+        "explanation": "Incorrect. The pair identifies the dataset within its containing model."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The model and dataset identifiers identify which dataset the datamodel command should select. Additional syntax depends on the requested operation.",
+    "difficulty": "medium",
+    "commands": [
+      "datamodel"
+    ],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.4/build-a-data-model/design-data-models",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 4 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=yCCvOkPSJuw&t=80s",
+    "source_question_number": 39
+  },
+  {
+    "id": "YT-SPLK-040",
+    "domain_id": 8,
+    "objective_id": "8.1",
+    "text": "Which set lists the three workflow action types available in Splunk Web?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "GET, POST, and search",
+        "explanation": "Correct. Splunk workflow actions support GET, POST, and Search types."
+      },
+      {
+        "id": "B",
+        "text": "GET, DELETE, and PUT",
+        "explanation": "Incorrect. DELETE and PUT are HTTP methods but are not the three workflow action types described here."
+      },
+      {
+        "id": "C",
+        "text": "Email, schedule, and ingest",
+        "explanation": "Incorrect. Email, scheduling, and ingestion are not the three workflow action types."
+      },
+      {
+        "id": "D",
+        "text": "Lookup, index, and replicate",
+        "explanation": "Incorrect. Lookup, index, and replicate are different functions rather than this workflow-type set."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Splunk workflow actions support GET, POST, and Search types.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.6/workflow-actions/about-workflow-actions-in-splunk-web",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 4 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=yCCvOkPSJuw&t=113s",
+    "source_question_number": 40
+  },
+  {
+    "id": "YT-SPLK-041",
+    "domain_id": 2,
+    "objective_id": "2.1",
+    "text": "Which narrated function is a valid eval function?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "int() used as an eval function",
+        "explanation": "Incorrect. int is not the documented scalar eval function in these choices; numeric conversion uses functions such as tonumber."
+      },
+      {
+        "id": "B",
+        "text": "print()",
+        "explanation": "Incorrect. print is not an SPL eval function for producing a field value."
+      },
+      {
+        "id": "C",
+        "text": "tostring()",
+        "explanation": "Correct. tostring is an eval conversion function that returns a string representation."
+      },
+      {
+        "id": "D",
+        "text": "count() used as an eval function",
+        "explanation": "Incorrect. count is a statistical aggregation function, not a scalar eval conversion function."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "tostring is an eval conversion function that returns a string representation.",
+    "difficulty": "easy",
+    "commands": [
+      "eval"
+    ],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/spl-search-reference/10.2/search-commands/eval",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 4 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=yCCvOkPSJuw&t=146s",
+    "source_question_number": 41
+  },
+  {
+    "id": "YT-SPLK-042",
+    "domain_id": 5,
+    "objective_id": "5.2",
+    "text": "Which fields can be inputs to calculated fields?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "A tag applied later in search-time processing",
+        "explanation": "Incorrect. A tag added later in the search-time sequence cannot supply an earlier calculated-field evaluation."
+      },
+      {
+        "id": "B",
+        "text": "A field that exists only after a later SPL command",
+        "explanation": "Incorrect. A field created only by a subsequent SPL command is unavailable to the earlier calculated-field definition."
+      },
+      {
+        "id": "C",
+        "text": "A field first created later by an automatic lookup",
+        "explanation": "Incorrect. A field first added by a later automatic lookup is not yet available at this stage."
+      },
+      {
+        "id": "D",
+        "text": "An extracted field",
+        "explanation": "Correct. Search-time extracted fields exist before calculated fields are evaluated, making them valid inputs."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Search-time extracted fields exist before calculated fields are evaluated, making them valid inputs.",
+    "difficulty": "medium",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.2/get-started-with-knowledge-objects/the-sequence-of-search-time-operations",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 4 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=yCCvOkPSJuw&t=176s",
+    "source_question_number": 42
+  },
+  {
+    "id": "YT-SPLK-043",
+    "domain_id": 9,
+    "objective_id": "9.2",
+    "text": "What are the three traditional data model dataset categories?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Index, source, and source type",
+        "explanation": "Incorrect. These describe event storage or metadata rather than the three dataset categories."
+      },
+      {
+        "id": "B",
+        "text": "Event, search, transaction",
+        "explanation": "Correct. Traditional data models can contain event, search, and transaction dataset types."
+      },
+      {
+        "id": "C",
+        "text": "Extracted, calculated, and inherited",
+        "explanation": "Incorrect. These are field categories rather than dataset categories."
+      },
+      {
+        "id": "D",
+        "text": "GET, POST, and search",
+        "explanation": "Incorrect. These are workflow action types rather than data model dataset categories."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Traditional data models can contain event, search, and transaction dataset types.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.4/build-a-data-model/design-data-models",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 4 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=yCCvOkPSJuw&t=211s",
+    "source_question_number": 43
+  },
+  {
+    "id": "YT-SPLK-044",
+    "domain_id": 8,
+    "objective_id": "8.1",
+    "text": "What use case is associated with a GET workflow?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Run a secondary SPL search through a Search action",
+        "explanation": "Incorrect. That is the Search workflow action use case rather than an external GET request."
+      },
+      {
+        "id": "B",
+        "text": "Submit event values in an HTTP form body",
+        "explanation": "Incorrect. A POST action is used for that form submission."
+      },
+      {
+        "id": "C",
+        "text": "Retrieve external information using a URL built from event values",
+        "explanation": "Correct. A GET workflow inserts event values into a URL and retrieves external information using an HTTP GET request."
+      },
+      {
+        "id": "D",
+        "text": "Replace an existing field value through an eval expression",
+        "explanation": "Incorrect. A calculation is not a GET workflow action."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "A GET workflow inserts event values into a URL and retrieves external information using an HTTP GET request.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.6/workflow-actions/about-workflow-actions-in-splunk-web",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 4 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=yCCvOkPSJuw&t=255s",
+    "source_question_number": 44
+  },
+  {
+    "id": "YT-SPLK-045",
+    "domain_id": 8,
+    "objective_id": "8.2",
+    "text": "Where can the URL from a GET workflow open?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Only a server-side HTTP request with no browser window",
+        "explanation": "Incorrect. The workflow creates a user-selectable browser link; it is not limited to an invisible server-side request."
+      },
+      {
+        "id": "B",
+        "text": "Only the current window",
+        "explanation": "Incorrect. Current-window behavior is an option, not the only supported choice."
+      },
+      {
+        "id": "C",
+        "text": "The current window or a new window",
+        "explanation": "Correct. A GET workflow link can be configured to open in the current browser window or a new one."
+      },
+      {
+        "id": "D",
+        "text": "Only a new window",
+        "explanation": "Incorrect. New-window behavior is an option, not the only supported choice."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "A GET workflow link can be configured to open in the current browser window or a new one.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.6/workflow-actions/about-workflow-actions-in-splunk-web",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 4 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=yCCvOkPSJuw&t=295s",
+    "source_question_number": 45
+  },
+  {
+    "id": "YT-SPLK-046",
+    "domain_id": 6,
+    "objective_id": "6.3",
+    "text": "How can an event type be created through Settings?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Settings > Forwarding > New",
+        "explanation": "Incorrect. Forwarding settings manage data transport, not event types."
+      },
+      {
+        "id": "B",
+        "text": "Settings > Indexes > New",
+        "explanation": "Incorrect. The Indexes page manages storage indexes rather than event classification expressions."
+      },
+      {
+        "id": "C",
+        "text": "Settings > Licensing > New",
+        "explanation": "Incorrect. Licensing settings manage entitlement/usage rather than event classifications."
+      },
+      {
+        "id": "D",
+        "text": "Settings > Event types > New",
+        "explanation": "Correct. The Event types settings page provides the New action for defining an event type."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "The Event types settings page provides the New action for defining an event type.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/9.1/event-types/about-event-types",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 4 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=yCCvOkPSJuw&t=348s",
+    "source_question_number": 46
+  },
+  {
+    "id": "YT-SPLK-047",
+    "domain_id": 3,
+    "objective_id": "3.1",
+    "text": "How are evicted transactions marked?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "closed_txn=0",
+        "explanation": "Correct. Evicted transactions have closed_txn=0. Context matters: unconstrained transactions can also remain open, so zero alone is not proof of a particular memory eviction cause."
+      },
+      {
+        "id": "B",
+        "text": "duration=0",
+        "explanation": "Incorrect. A duration of zero can simply represent simultaneous events or a single-event transaction; it does not identify eviction."
+      },
+      {
+        "id": "C",
+        "text": "closed_txn=1",
+        "explanation": "Incorrect. closed_txn=1 indicates a closed/non-evicted transaction."
+      },
+      {
+        "id": "D",
+        "text": "maxspan=0",
+        "explanation": "Incorrect. maxspan is a constraint on total transaction duration, not an eviction flag."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Evicted transactions have closed_txn=0. Context matters: unconstrained transactions can also remain open, so zero alone is not proof of a particular memory eviction cause.",
+    "difficulty": "medium",
+    "commands": [
+      "transaction"
+    ],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/spl-search-reference/9.0/search-commands/transaction",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 4 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=yCCvOkPSJuw&t=394s",
+    "source_question_number": 47
+  },
+  {
+    "id": "YT-SPLK-048",
+    "domain_id": 4,
+    "objective_id": "4.1",
+    "text": "Adapted scripted-input question: A script input explicitly sets source=inventory_feed, sourcetype=inventory, and index=main. What is its source field?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "main",
+        "explanation": "Incorrect. main is the destination index, not the source field."
+      },
+      {
+        "id": "B",
+        "text": "inventory_feed",
+        "explanation": "Correct. The explicit source setting determines the source field, so it is inventory_feed in this newly supplied example."
+      },
+      {
+        "id": "C",
+        "text": "unknown",
+        "explanation": "Incorrect. unknown ignores the explicit source assignment."
+      },
+      {
+        "id": "D",
+        "text": "inventory",
+        "explanation": "Incorrect. inventory is the sourcetype value, not the explicitly configured source."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The explicit source setting determines the source field, so it is inventory_feed in this newly supplied example. Supplemental topic: the assigned objective is a related filing category, not a direct exam-objective match. Excluded from scored practice.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/developing-views-and-apps-for-splunk-web/10.6/build-scripted-inputs/setting-up-a-scripted-input",
+    "review_status": "needs_review",
+    "objective_alignment": "supplemental",
+    "source": "YouTube playlist adaptation · Part 4 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=yCCvOkPSJuw&t=445s",
+    "source_question_number": 48
+  },
+  {
+    "id": "YT-SPLK-049",
+    "domain_id": 5,
+    "objective_id": "5.2",
+    "text": "Which SPL command underlies calculated-field transformations?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "eval",
+        "explanation": "Correct. Calculated fields use eval expressions to apply reusable search-time transformations."
+      },
+      {
+        "id": "B",
+        "text": "lookup",
+        "explanation": "Incorrect. lookup supplies values from a lookup source; it is not the eval expression underlying a calculated field."
+      },
+      {
+        "id": "C",
+        "text": "stats",
+        "explanation": "Incorrect. stats aggregates groups of results rather than defining a calculated field expression."
+      },
+      {
+        "id": "D",
+        "text": "transaction",
+        "explanation": "Incorrect. transaction correlates and combines related events rather than defining this calculated-field transformation."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Calculated fields use eval expressions to apply reusable search-time transformations.",
+    "difficulty": "easy",
+    "commands": [
+      "eval"
+    ],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.2/get-started-with-knowledge-objects/the-sequence-of-search-time-operations",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 5 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=XEOPz_EAJM8&t=36s",
+    "source_question_number": 49
+  },
+  {
+    "id": "YT-SPLK-050",
+    "domain_id": 8,
+    "objective_id": "8.2",
+    "text": "Which browser-window choices are available for GET workflow links?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Only the current window",
+        "explanation": "Incorrect. A GET link can also open in a new window."
+      },
+      {
+        "id": "B",
+        "text": "Only a popup containing an SPL result table",
+        "explanation": "Incorrect. The action opens a configured URL rather than requiring that display."
+      },
+      {
+        "id": "C",
+        "text": "Only a new window",
+        "explanation": "Incorrect. The current-window option is also available."
+      },
+      {
+        "id": "D",
+        "text": "The current window or a new window",
+        "explanation": "Correct. A GET workflow link can be configured to open in the current browser window or a new one."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "A GET workflow link can be configured to open in the current browser window or a new one.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.6/workflow-actions/about-workflow-actions-in-splunk-web",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 5 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=XEOPz_EAJM8&t=71s",
+    "source_question_number": 50
+  },
+  {
+    "id": "YT-SPLK-051",
+    "domain_id": 3,
+    "objective_id": "3.6",
+    "text": "When is transaction appropriate in place of stats?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Counting all events without preserving event text",
+        "explanation": "Incorrect. stats count meets a counting-only requirement; retaining raw transaction events is unnecessary."
+      },
+      {
+        "id": "B",
+        "text": "Calculating one total per host",
+        "explanation": "Incorrect. A per-host total is an aggregation that stats sum can perform without preserving transaction event text."
+      },
+      {
+        "id": "C",
+        "text": "Grouping when event duration is irrelevant",
+        "explanation": "Incorrect. When duration and boundary semantics are irrelevant, stats is usually sufficient and more efficient."
+      },
+      {
+        "id": "D",
+        "text": "Grouping with explicit start and end constraints",
+        "explanation": "Correct. transaction can preserve and combine events according to start/end boundaries; this is a typical reason to prefer it over a simple aggregation."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "transaction can preserve and combine events according to start/end boundaries; this is a typical reason to prefer it over a simple aggregation.",
+    "difficulty": "easy",
+    "commands": [
+      "transaction",
+      "stats"
+    ],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/spl-search-reference/9.0/search-commands/transaction",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 5 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=XEOPz_EAJM8&t=127s",
+    "source_question_number": 51
+  },
+  {
+    "id": "YT-SPLK-052",
+    "domain_id": 10,
+    "objective_id": "10.2",
+    "text": "What reusable modeling structure does the CIM add-on supply?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "A universal parser for every custom vendor source",
+        "explanation": "Incorrect. Source-specific parsing and mappings are not universally supplied."
+      },
+      {
+        "id": "B",
+        "text": "Only tags with no model definitions",
+        "explanation": "Incorrect. The add-on includes predefined data models."
+      },
+      {
+        "id": "C",
+        "text": "Predefined data models",
+        "explanation": "Correct. The CIM add-on supplies predefined data models that describe common event semantics."
+      },
+      {
+        "id": "D",
+        "text": "Automatically enabled acceleration for every model",
+        "explanation": "Incorrect. Acceleration defaults and configuration are not a universal always-on guarantee."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "The CIM add-on supplies predefined data models that describe common event semantics.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-cloud-platform/common-information-model/6.0/data-models/cim-fields-per-associated-data-model",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 5 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=XEOPz_EAJM8&t=177s",
+    "source_question_number": 52
+  },
+  {
+    "id": "YT-SPLK-053",
+    "domain_id": 2,
+    "objective_id": "2.1",
+    "text": "Given eval description=case(status==200,\"OK\",status==404,\"Not found\",status==500,\"Internal Server Error\"), what is description when status=503?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "A syntax error solely because 503 has no branch",
+        "explanation": "Incorrect. case can validly omit a catch-all condition; no matching branch does not by itself cause a syntax error."
+      },
+      {
+        "id": "B",
+        "text": "NULL / no value",
+        "explanation": "Correct. case returns the result for the first matching condition. None of the specified equality tests match 503 and no default branch is present, so the result is null."
+      },
+      {
+        "id": "C",
+        "text": "0",
+        "explanation": "Incorrect. A missing match produces null, not an automatic numeric zero."
+      },
+      {
+        "id": "D",
+        "text": "Internal Server Error",
+        "explanation": "Incorrect. 503 does not equal the explicitly tested value 500, so this branch does not match."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "case returns the result for the first matching condition. None of the specified equality tests match 503 and no default branch is present, so the result is null.",
+    "difficulty": "medium",
+    "commands": [
+      "eval"
+    ],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/spl-search-reference/10.2/search-commands/eval",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 5 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=XEOPz_EAJM8&t=243s",
+    "source_question_number": 53
+  },
+  {
+    "id": "YT-SPLK-054",
+    "domain_id": 3,
+    "objective_id": "3.4",
+    "text": "Which statement describes the output of transaction JSESSIONID?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "Retains only one representative event per session",
+        "explanation": "Incorrect. That describes dedup rather than transaction grouping."
+      },
+      {
+        "id": "B",
+        "text": "Adds maxspan as the measured duration field",
+        "explanation": "Incorrect. maxspan is a grouping option; the generated measurement is duration."
+      },
+      {
+        "id": "C",
+        "text": "Returns only a count by session without combined event text",
+        "explanation": "Incorrect. That is a counts-only aggregation rather than the described transaction output."
+      },
+      {
+        "id": "D",
+        "text": "Adds duration and eventcount and combines related events",
+        "explanation": "Correct. transaction groups related events and adds duration and eventcount metadata to the combined results."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "transaction groups related events and adds duration and eventcount metadata to the combined results.",
+    "difficulty": "medium",
+    "commands": [
+      "transaction"
+    ],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/spl-search-reference/9.0/search-commands/transaction",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 5 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=XEOPz_EAJM8&t=312s",
+    "source_question_number": 54
+  },
+  {
+    "id": "YT-SPLK-055",
+    "domain_id": 7,
+    "objective_id": "7.3",
+    "text": "Which definition name denotes a search macro named session_summary that accepts three arguments?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "session_summary_3 with no declared arguments",
+        "explanation": "Incorrect. A suffix _3 alone does not declare the number of macro arguments."
+      },
+      {
+        "id": "B",
+        "text": "3session_summary",
+        "explanation": "Incorrect. A prefix of 3 is part of a name, not the argument-count declaration."
+      },
+      {
+        "id": "C",
+        "text": "session_summary with an unlimited argument count",
+        "explanation": "Incorrect. Macros do not all accept arbitrary numbers of arguments; the arity is defined."
+      },
+      {
+        "id": "D",
+        "text": "session_summary(3)",
+        "explanation": "Correct. A definition named session_summary(3) declares a three-argument macro; its definition must also supply the argument names."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "A definition named session_summary(3) declares a three-argument macro; its definition must also supply the argument names.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-cloud-platform/manage-knowledge-objects/knowledge-management-manual/10.6/search-macros/define-search-macros-in-settings",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 5 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=XEOPz_EAJM8&t=367s",
+    "source_question_number": 55
+  },
+  {
+    "id": "YT-SPLK-056",
+    "domain_id": 6,
+    "objective_id": "6.1",
+    "text": "What does a tag label attach to?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "A field/value pair",
+        "explanation": "Correct. A tag labels a field/value pair, so events containing the tagged pair can be retrieved with tag syntax."
+      },
+      {
+        "id": "B",
+        "text": "A field name regardless of its value",
+        "explanation": "Incorrect. A tag is attached to a field-value combination."
+      },
+      {
+        "id": "C",
+        "text": "Only an event type definition, never other field values",
+        "explanation": "Incorrect. Tags can label other field-value pairs as well."
+      },
+      {
+        "id": "D",
+        "text": "Only an indexed raw message with no field-value association",
+        "explanation": "Incorrect. Tags are associated with field-value pairs."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "A tag labels a field/value pair, so events containing the tagged pair can be retrieved with tag syntax.",
+    "difficulty": "easy",
+    "commands": [],
+    "reference": "https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.2/get-started-with-knowledge-objects/the-sequence-of-search-time-operations",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 5 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=XEOPz_EAJM8&t=408s",
+    "source_question_number": 56
+  },
+  {
+    "id": "YT-SPLK-057",
+    "domain_id": 7,
+    "objective_id": "7.4",
+    "text": "Adapted macro question: set_new(1) is a command-fragment macro defined as eval new_field=$field$. Which search correctly invokes it with old_field?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "index=main | 'set_new(old_field)' | table _time new_field",
+        "explanation": "Incorrect. Single quotes do not invoke a search macro; they have different SPL expression uses."
+      },
+      {
+        "id": "B",
+        "text": "index=main | \"set_new(old_field)\" | table _time new_field",
+        "explanation": "Incorrect. Double quotes do not invoke a search macro; this is not the required command-fragment expansion syntax."
+      },
+      {
+        "id": "C",
+        "text": "index=main | `set_new(old_field)` | table _time new_field",
+        "explanation": "Correct. Backticks invoke the macro. The supplied old_field argument replaces $field$, expanding to eval new_field=old_field before table selects the fields."
+      },
+      {
+        "id": "D",
+        "text": "index=main | $set_new(old_field)$ | table _time new_field",
+        "explanation": "Incorrect. Dollar-sign tokens reference arguments inside definitions, not the macro invocation itself."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Backticks invoke the macro. The supplied old_field argument replaces $field$, expanding to eval new_field=old_field before table selects the fields.",
+    "difficulty": "medium",
+    "commands": [
+      "eval"
+    ],
+    "reference": "https://help.splunk.com/en/splunk-cloud-platform/manage-knowledge-objects/knowledge-management-manual/10.6/search-macros/define-search-macros-in-settings",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 5 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=XEOPz_EAJM8&t=450s",
+    "source_question_number": 57
+  },
+  {
+    "id": "YT-SPLK-058",
+    "domain_id": 2,
+    "objective_id": "2.2",
+    "text": "Adapted session question: Which search retrieves events whose JSESSIONID is session42, without requiring transaction grouping?",
+    "type": "single",
+    "options": [
+      {
+        "id": "A",
+        "text": "index=web sourcetype=access_combined | table JSESSIONID",
+        "explanation": "Incorrect. table projects the field but does not restrict the events to session42."
+      },
+      {
+        "id": "B",
+        "text": "index=web sourcetype=access_combined | head 1",
+        "explanation": "Incorrect. head 1 limits result count and does not select by session identifier."
+      },
+      {
+        "id": "C",
+        "text": "index=web sourcetype=access_combined JSESSIONID=\"session42\"",
+        "explanation": "Correct. The field-value predicate restricts the events to the specified session. This adapted question asks for filtering, not transaction grouping."
+      },
+      {
+        "id": "D",
+        "text": "index=web sourcetype=access_combined | stats count",
+        "explanation": "Incorrect. stats count produces an aggregate count without selecting the requested session."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "The field-value predicate restricts the events to the specified session. This adapted question asks for filtering, not transaction grouping.",
+    "difficulty": "medium",
+    "commands": [
+      "search"
+    ],
+    "reference": "https://help.splunk.com/en/splunk-cloud-platform/search/search-reference/10.4.2604/search-commands/search",
+    "review_status": "verified",
+    "objective_alignment": "direct",
+    "source": "YouTube playlist adaptation · Part 5 · Author-reviewed study item",
+    "source_url": "https://www.youtube.com/watch?v=XEOPz_EAJM8&t=526s",
+    "source_question_number": 58
+  }
+]

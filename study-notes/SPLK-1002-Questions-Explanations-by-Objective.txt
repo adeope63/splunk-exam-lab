@@ -1,0 +1,1126 @@
+SPLK-1002 — PLAYLIST QUESTIONS WITH ANSWER EXPLANATIONS
+
+Four options per question. ✅ marks the correct answer. Every option includes its rationale.
+Original practice items and paraphrased playlist adaptations; not verified official past exam questions.
+
+DOMAIN 1: Using Transforming Commands for Visualizations
+
+OBJECTIVE 1.1: Use the chart command
+
+YT-SPLK-032 [direct]
+Which transforming commands share statistical aggregation functions?
+
+A. stats, chart, timechart ✅ CORRECT ANSWER
+   Correct. stats, chart, and timechart use statistical aggregation functions such as count, sum, and avg. Their result layouts differ.
+B. inputlookup, lookup, outputlookup
+   Incorrect. Lookup commands read or apply lookup data; they do not provide the stats/chart/timechart aggregation family.
+C. search, where, transaction
+   Incorrect. These commands have different expression/correlation purposes and do not share the same transforming aggregation function set.
+D. table, fields, dedup
+   Incorrect. table and fields project columns; dedup removes duplicate results rather than providing that aggregation function family.
+
+Explanation: stats, chart, and timechart use statistical aggregation functions such as count, sum, and avg. Their result layouts differ.
+Reference: https://help.splunk.com/en/splunk-enterprise/spl-search-reference/10.4/search-commands/chart
+Source video: https://www.youtube.com/watch?v=h3SB_6wgTPo&t=410s
+
+------------------------------------------------------------------------
+
+YT-SPLK-037 [supplemental]
+Which chart represents two positions plus a third numeric measure?
+
+A. Bubble chart ✅ CORRECT ANSWER
+   Correct. A bubble chart uses two axes and bubble size to encode a third numeric measure. This is supplemental visualization knowledge.
+B. Single-value display
+   Incorrect. A single-value display focuses on one measure, not three numeric dimensions.
+C. Standard two-dimensional line chart
+   Incorrect. A standard line chart uses two axes and does not encode a third measure through bubble size.
+D. Pie chart
+   Incorrect. A pie chart principally shows proportions and does not provide two positional axes plus bubble size.
+
+Explanation: A bubble chart uses two axes and bubble size to encode a third numeric measure. This is supplemental visualization knowledge. Supplemental topic: the assigned objective is a related filing category, not a direct exam-objective match. Excluded from scored practice.
+Reference: https://help.splunk.com/en/splunk-enterprise/spl-search-reference/10.4/search-commands/chart
+Source video: https://www.youtube.com/watch?v=h3SB_6wgTPo&t=619s
+Supplemental study only; excluded from exams. The objective is a related filing category.
+
+------------------------------------------------------------------------
+
+OBJECTIVE 1.2: Use the timechart command
+
+YT-SPLK-004 [direct]
+How would you put a timechart into twelve-hour buckets?
+
+A. timespan=12
+   Incorrect. timespan is not the timechart bucket-width argument and 12 has no explicit hour unit.
+B. span=12h ✅ CORRECT ANSWER
+   Correct. span controls bucket width; 12h specifies twelve hours.
+C. duration=12h
+   Incorrect. duration is not the timechart argument for bucket width.
+D. interval=12
+   Incorrect. interval is not the timechart span argument.
+
+Explanation: span controls bucket width; 12h specifies twelve hours.
+Reference: https://help.splunk.com/en/splunk-enterprise/spl-search-reference/10.4/search-commands/timechart
+Source video: https://www.youtube.com/watch?v=jRr3u1IUHvg&t=177s
+
+------------------------------------------------------------------------
+
+YT-SPLK-016 [direct]
+How can a timechart retain every split-by series?
+
+A. limit=0 ✅ CORRECT ANSWER
+   Correct. limit=0 disables split-by series filtering, allowing all split-by values to be retained.
+B. limit=none
+   Incorrect. none is not the documented numeric value for this purpose.
+C. limit=all
+   Incorrect. all is not the documented numeric value that disables series filtering.
+D. limit=*
+   Incorrect. An asterisk is not the documented limit value that retains all series.
+
+Explanation: limit=0 disables split-by series filtering, allowing all split-by values to be retained.
+Reference: https://help.splunk.com/en/splunk-enterprise/spl-search-reference/10.4/search-commands/timechart
+Source video: https://www.youtube.com/watch?v=FybQkK-QyYk&t=245s
+
+------------------------------------------------------------------------
+
+YT-SPLK-028 [direct]
+Adapted chart question: Which command produces event counts over time with a separate series for each status value?
+
+A. stats count BY status
+   Incorrect. stats count BY status produces per-status totals without time buckets.
+B. table _time status
+   Incorrect. table lists fields from events without computing bucketed counts.
+C. timechart count BY status ✅ CORRECT ANSWER
+   Correct. timechart uses time on its horizontal grouping axis, count for the measure, and BY status for separate series.
+D. chart count OVER status BY host
+   Incorrect. chart over status by host uses status and host dimensions, not time buckets.
+
+Explanation: timechart uses time on its horizontal grouping axis, count for the measure, and BY status for separate series.
+Reference: https://help.splunk.com/en/splunk-enterprise/spl-search-reference/10.4/search-commands/timechart
+Source video: https://www.youtube.com/watch?v=h3SB_6wgTPo&t=174s
+
+------------------------------------------------------------------------
+
+YT-SPLK-034 [direct]
+Which timechart option controls time buckets?
+
+A. span ✅ CORRECT ANSWER
+   Correct. span sets the width of time buckets used by timechart.
+B. duration
+   Incorrect. duration is transaction elapsed-time metadata, not timechart bucket sizing.
+C. eventcount
+   Incorrect. eventcount describes transaction membership, not time buckets.
+D. interval
+   Incorrect. interval is not the timechart bucket-width argument.
+
+Explanation: span sets the width of time buckets used by timechart.
+Reference: https://help.splunk.com/en/splunk-enterprise/spl-search-reference/10.4/search-commands/timechart
+Source video: https://www.youtube.com/watch?v=h3SB_6wgTPo&t=489s
+
+------------------------------------------------------------------------
+
+DOMAIN 2: Filtering and Formatting Results
+
+OBJECTIVE 2.1: The eval command
+
+YT-SPLK-033 [direct]
+Which is a valid use of eval?
+
+A. Compute a derived field using a conditional expression ✅ CORRECT ANSWER
+   Correct. eval can assign a derived field from an expression, including conditional functions such as if or case.
+B. Filter out results solely by assigning a Boolean field
+   Incorrect. eval computes a field; it does not remove results as where does.
+C. Group raw events into transactions with start and end boundaries
+   Incorrect. transaction performs that grouping.
+D. Assign a tag to a field-value pair as a knowledge object
+   Incorrect. Tag configuration is distinct from an eval field calculation.
+
+Explanation: eval can assign a derived field from an expression, including conditional functions such as if or case.
+Reference: https://help.splunk.com/en/splunk-enterprise/spl-search-reference/10.2/search-commands/eval
+Source video: https://www.youtube.com/watch?v=h3SB_6wgTPo&t=451s
+
+------------------------------------------------------------------------
+
+YT-SPLK-041 [direct]
+Which narrated function is a valid eval function?
+
+A. int() used as an eval function
+   Incorrect. int is not the documented scalar eval function in these choices; numeric conversion uses functions such as tonumber.
+B. print()
+   Incorrect. print is not an SPL eval function for producing a field value.
+C. tostring() ✅ CORRECT ANSWER
+   Correct. tostring is an eval conversion function that returns a string representation.
+D. count() used as an eval function
+   Incorrect. count is a statistical aggregation function, not a scalar eval conversion function.
+
+Explanation: tostring is an eval conversion function that returns a string representation.
+Reference: https://help.splunk.com/en/splunk-enterprise/spl-search-reference/10.2/search-commands/eval
+Source video: https://www.youtube.com/watch?v=yCCvOkPSJuw&t=146s
+
+------------------------------------------------------------------------
+
+YT-SPLK-053 [direct]
+Given eval description=case(status==200,"OK",status==404,"Not found",status==500,"Internal Server Error"), what is description when status=503?
+
+A. A syntax error solely because 503 has no branch
+   Incorrect. case can validly omit a catch-all condition; no matching branch does not by itself cause a syntax error.
+B. NULL / no value ✅ CORRECT ANSWER
+   Correct. case returns the result for the first matching condition. None of the specified equality tests match 503 and no default branch is present, so the result is null.
+C. 0
+   Incorrect. A missing match produces null, not an automatic numeric zero.
+D. Internal Server Error
+   Incorrect. 503 does not equal the explicitly tested value 500, so this branch does not match.
+
+Explanation: case returns the result for the first matching condition. None of the specified equality tests match 503 and no default branch is present, so the result is null.
+Reference: https://help.splunk.com/en/splunk-enterprise/spl-search-reference/10.2/search-commands/eval
+Source video: https://www.youtube.com/watch?v=XEOPz_EAJM8&t=243s
+
+------------------------------------------------------------------------
+
+OBJECTIVE 2.2: Use the search and where commands to filter results
+
+YT-SPLK-019 [direct]
+How does an explicit search command relate to the initial search expression?
+
+A. It filters available results using search-expression rules ✅ CORRECT ANSWER
+   Correct. Both the initial implicit search and a later explicit search use search-expression rules on the fields/events available at that point.
+B. It makes every comparison case sensitive
+   Incorrect. search field-value matching is normally case insensitive; use CASE for a case-sensitive match.
+C. It only works before the first pipe
+   Incorrect. An explicit search command can filter later in the pipeline.
+D. It restores all fields removed by earlier commands
+   Incorrect. A later filter cannot restore fields discarded by an earlier transforming or projection command.
+
+Explanation: Both the initial implicit search and a later explicit search use search-expression rules on the fields/events available at that point.
+Reference: https://help.splunk.com/en/splunk-cloud-platform/search/search-reference/10.4.2604/search-commands/search
+Source video: https://www.youtube.com/watch?v=FybQkK-QyYk&t=370s
+
+------------------------------------------------------------------------
+
+YT-SPLK-058 [direct]
+Adapted session question: Which search retrieves events whose JSESSIONID is session42, without requiring transaction grouping?
+
+A. index=web sourcetype=access_combined | table JSESSIONID
+   Incorrect. table projects the field but does not restrict the events to session42.
+B. index=web sourcetype=access_combined | head 1
+   Incorrect. head 1 limits result count and does not select by session identifier.
+C. index=web sourcetype=access_combined JSESSIONID="session42" ✅ CORRECT ANSWER
+   Correct. The field-value predicate restricts the events to the specified session. This adapted question asks for filtering, not transaction grouping.
+D. index=web sourcetype=access_combined | stats count
+   Incorrect. stats count produces an aggregate count without selecting the requested session.
+
+Explanation: The field-value predicate restricts the events to the specified session. This adapted question asks for filtering, not transaction grouping.
+Reference: https://help.splunk.com/en/splunk-cloud-platform/search/search-reference/10.4.2604/search-commands/search
+Source video: https://www.youtube.com/watch?v=XEOPz_EAJM8&t=526s
+
+------------------------------------------------------------------------
+
+OBJECTIVE 2.3: The fillnull command
+
+YT-SPLK-006 [direct]
+Two fields already exist in the result schema. Which approach fills null amount values with 0 and null category values with "unknown"?
+
+A. fillnull value=0 amount followed by fillnull value="unknown" category ✅ CORRECT ANSWER
+   Correct. Each fillnull command specifies its own field list and replacement, so amount gets 0 while category gets unknown. The fields must exist in the result schema.
+B. fillnull value="unknown" amount category
+   Incorrect. One replacement of unknown would be applied to both fields, so amount would not get 0.
+C. fields amount category
+   Incorrect. fields selects or removes fields; it does not replace null values.
+D. fillnull value=0 amount category
+   Incorrect. One replacement of 0 would be applied to both fields, so category would not get unknown.
+
+Explanation: Each fillnull command specifies its own field list and replacement, so amount gets 0 while category gets unknown. The fields must exist in the result schema.
+Reference: https://help.splunk.com/en/splunk-enterprise/spl-search-reference/10.2/search-commands/eval
+Source video: https://www.youtube.com/watch?v=jRr3u1IUHvg&t=268s
+
+------------------------------------------------------------------------
+
+DOMAIN 3: Correlating Events
+
+OBJECTIVE 3.1: Identify transactions
+
+YT-SPLK-009 [direct]
+Which transaction field identifies an evicted/open transaction?
+
+A. duration=-1
+   Incorrect. duration is elapsed time, not a flag for eviction; a negative duration is not the required marker.
+B. closed_txn=1
+   Incorrect. closed_txn=1 indicates a closed/non-evicted transaction.
+C. eventcount=0
+   Incorrect. eventcount is a member-event count, not an eviction indicator.
+D. closed_txn=0 ✅ CORRECT ANSWER
+   Correct. Evicted transactions have closed_txn=0. Context matters: unconstrained transactions can also remain open, so zero alone is not proof of a particular memory eviction cause.
+
+Explanation: Evicted transactions have closed_txn=0. Context matters: unconstrained transactions can also remain open, so zero alone is not proof of a particular memory eviction cause.
+Reference: https://help.splunk.com/en/splunk-enterprise/spl-search-reference/9.0/search-commands/transaction
+Source video: https://www.youtube.com/watch?v=jRr3u1IUHvg&t=480s
+
+------------------------------------------------------------------------
+
+YT-SPLK-029 [direct]
+What result does transaction build from related events?
+
+A. One retained representative event for each key
+   Incorrect. That describes dedup behavior rather than combining related raw events.
+B. Only an aggregate count for each key
+   Incorrect. A stats count result does not preserve the transaction event grouping.
+C. A combined event representing related input events ✅ CORRECT ANSWER
+   Correct. transaction combines related member events into one transaction result while preserving combined event content and adding metadata.
+D. A set of unrelated events joined only by output position
+   Incorrect. Transaction correlates events through configured keys and constraints.
+
+Explanation: transaction combines related member events into one transaction result while preserving combined event content and adding metadata.
+Reference: https://help.splunk.com/en/splunk-enterprise/spl-search-reference/9.0/search-commands/transaction
+Source video: https://www.youtube.com/watch?v=h3SB_6wgTPo&t=278s
+
+------------------------------------------------------------------------
+
+YT-SPLK-047 [direct]
+How are evicted transactions marked?
+
+A. closed_txn=0 ✅ CORRECT ANSWER
+   Correct. Evicted transactions have closed_txn=0. Context matters: unconstrained transactions can also remain open, so zero alone is not proof of a particular memory eviction cause.
+B. duration=0
+   Incorrect. A duration of zero can simply represent simultaneous events or a single-event transaction; it does not identify eviction.
+C. closed_txn=1
+   Incorrect. closed_txn=1 indicates a closed/non-evicted transaction.
+D. maxspan=0
+   Incorrect. maxspan is a constraint on total transaction duration, not an eviction flag.
+
+Explanation: Evicted transactions have closed_txn=0. Context matters: unconstrained transactions can also remain open, so zero alone is not proof of a particular memory eviction cause.
+Reference: https://help.splunk.com/en/splunk-enterprise/spl-search-reference/9.0/search-commands/transaction
+Source video: https://www.youtube.com/watch?v=yCCvOkPSJuw&t=394s
+
+------------------------------------------------------------------------
+
+OBJECTIVE 3.2: Group events using fields
+
+YT-SPLK-025 [direct]
+Events contain numeric sales and product_name. Which command totals sales for each product?
+
+A. stats count AS total_sales BY product_name
+   Incorrect. count counts matching events rather than summing their sales values.
+B. stats avg(sales) AS total_sales BY product_name
+   Incorrect. avg computes the mean sale value rather than the total.
+C. stats sum(sales) AS total_sales BY product_name ✅ CORRECT ANSWER
+   Correct. sum(sales) totals the numeric measure; BY product_name creates one group for each product.
+D. stats sum(sales) AS total_sales
+   Incorrect. Without BY product_name this produces a combined total rather than a total per product.
+
+Explanation: sum(sales) totals the numeric measure; BY product_name creates one group for each product.
+Reference: https://help.splunk.com/en/splunk-enterprise/spl-search-reference/9.0/search-commands/transaction
+Source video: https://www.youtube.com/watch?v=h3SB_6wgTPo&t=35s
+
+------------------------------------------------------------------------
+
+OBJECTIVE 3.4: Search with transactions
+
+YT-SPLK-054 [direct]
+Which statement describes the output of transaction JSESSIONID?
+
+A. Retains only one representative event per session
+   Incorrect. That describes dedup rather than transaction grouping.
+B. Adds maxspan as the measured duration field
+   Incorrect. maxspan is a grouping option; the generated measurement is duration.
+C. Returns only a count by session without combined event text
+   Incorrect. That is a counts-only aggregation rather than the described transaction output.
+D. Adds duration and eventcount and combines related events ✅ CORRECT ANSWER
+   Correct. transaction groups related events and adds duration and eventcount metadata to the combined results.
+
+Explanation: transaction groups related events and adds duration and eventcount metadata to the combined results.
+Reference: https://help.splunk.com/en/splunk-enterprise/spl-search-reference/9.0/search-commands/transaction
+Source video: https://www.youtube.com/watch?v=XEOPz_EAJM8&t=312s
+
+------------------------------------------------------------------------
+
+OBJECTIVE 3.6: Determine when to use transactions vs. stats
+
+YT-SPLK-005 [direct]
+When does grouping require transaction rather than a simple stats aggregation?
+
+A. Counting events by one field
+   Incorrect. stats count by a field meets a simple counting requirement without retaining raw transaction events.
+B. Calculating an average by host
+   Incorrect. stats avg produces per-host averages efficiently; transaction is unnecessary for this alone.
+C. Grouping with explicit start and end conditions ✅ CORRECT ANSWER
+   Correct. transaction can preserve and combine events according to start/end boundaries; this is a typical reason to prefer it over a simple aggregation.
+D. Finding a maximum numeric value
+   Incorrect. stats max finds a maximum value; boundary-aware grouping is not required.
+
+Explanation: transaction can preserve and combine events according to start/end boundaries; this is a typical reason to prefer it over a simple aggregation.
+Reference: https://help.splunk.com/en/splunk-enterprise/spl-search-reference/9.0/search-commands/transaction
+Source video: https://www.youtube.com/watch?v=jRr3u1IUHvg&t=230s
+
+------------------------------------------------------------------------
+
+YT-SPLK-020 [direct]
+Which listed command is generally preferred for efficient field-based aggregation?
+
+A. join
+   Incorrect. join combines result sets using matching keys; it is not the default efficient aggregation command.
+B. transaction
+   Incorrect. transaction preserves grouped event content and boundary semantics, creating unnecessary overhead for simple aggregation.
+C. append
+   Incorrect. append adds rows from another result set; it does not itself aggregate by a field.
+D. stats ✅ CORRECT ANSWER
+   Correct. stats aggregates by fields without building raw-event transactions, making it the usual choice when only grouped measures are needed.
+
+Explanation: stats aggregates by fields without building raw-event transactions, making it the usual choice when only grouped measures are needed.
+Reference: https://help.splunk.com/en/splunk-enterprise/spl-search-reference/9.0/search-commands/transaction
+Source video: https://www.youtube.com/watch?v=FybQkK-QyYk&t=410s
+
+------------------------------------------------------------------------
+
+YT-SPLK-051 [direct]
+When is transaction appropriate in place of stats?
+
+A. Counting all events without preserving event text
+   Incorrect. stats count meets a counting-only requirement; retaining raw transaction events is unnecessary.
+B. Calculating one total per host
+   Incorrect. A per-host total is an aggregation that stats sum can perform without preserving transaction event text.
+C. Grouping when event duration is irrelevant
+   Incorrect. When duration and boundary semantics are irrelevant, stats is usually sufficient and more efficient.
+D. Grouping with explicit start and end constraints ✅ CORRECT ANSWER
+   Correct. transaction can preserve and combine events according to start/end boundaries; this is a typical reason to prefer it over a simple aggregation.
+
+Explanation: transaction can preserve and combine events according to start/end boundaries; this is a typical reason to prefer it over a simple aggregation.
+Reference: https://help.splunk.com/en/splunk-enterprise/spl-search-reference/9.0/search-commands/transaction
+Source video: https://www.youtube.com/watch?v=XEOPz_EAJM8&t=127s
+
+------------------------------------------------------------------------
+
+DOMAIN 4: Creating and Managing Fields
+
+OBJECTIVE 4.1: Perform regex field extractions using the Field Extractor (FX)
+
+YT-SPLK-007 [supporting]
+A report is shared with a colleague, but its custom field extraction remains visible only to the extraction owner. What permission issue explains this?
+
+A. The extraction has private permissions ✅ CORRECT ANSWER
+   Correct. Sharing a report does not automatically share the extraction it depends on. A private extraction can prevent another user from evaluating that field.
+B. The extraction is globally readable by all users
+   Incorrect. Global read access would not explain an extraction visible only to its owner.
+C. The extracted field must be indexed before it can be shared
+   Incorrect. Search-time extractions can be shared as knowledge objects.
+D. Sharing the report automatically shares every dependent object
+   Incorrect. Report permissions do not automatically grant access to every dependency.
+
+Explanation: Sharing a report does not automatically share the extraction it depends on. A private extraction can prevent another user from evaluating that field. This supports field-extraction knowledge generally rather than testing an extraction method directly.
+Reference: https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.4/use-the-settings-pages-for-field-extractions-in-splunk-web/use-the-field-extractions-page
+Source video: https://www.youtube.com/watch?v=jRr3u1IUHvg&t=363s
+
+------------------------------------------------------------------------
+
+YT-SPLK-024 [supporting]
+Do custom extractions saved with Field Extractor persist?
+
+A. They require redefining in every SPL query
+   Incorrect. A saved extraction can be reused; redefining it in every SPL query is unnecessary.
+B. They persist as search-time knowledge objects ✅ CORRECT ANSWER
+   Correct. Saving a Field Extractor extraction creates a persistent search-time knowledge object that can be permissioned and reused.
+C. They disappear after every search
+   Incorrect. Saved extraction definitions survive individual searches; they are not temporary per-search values.
+D. They necessarily rewrite indexed raw data
+   Incorrect. A search-time extraction interprets stored events rather than necessarily rewriting indexed _raw.
+
+Explanation: Saving a Field Extractor extraction creates a persistent search-time knowledge object that can be permissioned and reused. This supports field-extraction knowledge generally rather than testing an extraction method directly.
+Reference: https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.4/use-the-settings-pages-for-field-extractions-in-splunk-web/use-the-field-extractions-page
+Source video: https://www.youtube.com/watch?v=FybQkK-QyYk&t=555s
+
+------------------------------------------------------------------------
+
+YT-SPLK-048 [supplemental]
+Adapted scripted-input question: A script input explicitly sets source=inventory_feed, sourcetype=inventory, and index=main. What is its source field?
+
+A. main
+   Incorrect. main is the destination index, not the source field.
+B. inventory_feed ✅ CORRECT ANSWER
+   Correct. The explicit source setting determines the source field, so it is inventory_feed in this newly supplied example.
+C. unknown
+   Incorrect. unknown ignores the explicit source assignment.
+D. inventory
+   Incorrect. inventory is the sourcetype value, not the explicitly configured source.
+
+Explanation: The explicit source setting determines the source field, so it is inventory_feed in this newly supplied example. Supplemental topic: the assigned objective is a related filing category, not a direct exam-objective match. Excluded from scored practice.
+Reference: https://help.splunk.com/en/splunk-enterprise/developing-views-and-apps-for-splunk-web/10.6/build-scripted-inputs/setting-up-a-scripted-input
+Source video: https://www.youtube.com/watch?v=yCCvOkPSJuw&t=445s
+Supplemental study only; excluded from exams. The objective is a related filing category.
+
+------------------------------------------------------------------------
+
+DOMAIN 5: Creating Field Aliases and Calculated Fields
+
+OBJECTIVE 5.1: Describe, create, and use field aliases
+
+YT-SPLK-022 [direct]
+Which statement correctly describes a field alias?
+
+A. An alias adds another field name and preserves the original ✅ CORRECT ANSWER
+   Correct. A field alias exposes an existing field under an additional name while preserving the original. Field names remain case sensitive.
+B. An alias renames every raw event at index time
+   Incorrect. Field aliases operate at search time and do not rewrite indexed raw events.
+C. An alias always deletes the original field
+   Incorrect. Aliasing does not remove the original field; rename would be a different operation.
+D. Alias names are always case insensitive
+   Incorrect. Alias field names follow case-sensitive field-name handling, so this blanket case-insensitive statement is false.
+
+Explanation: A field alias exposes an existing field under an additional name while preserving the original. Field names remain case sensitive.
+Reference: https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.6/field-aliases/create-field-aliases-in-splunk-web
+Source video: https://www.youtube.com/watch?v=FybQkK-QyYk&t=469s
+
+------------------------------------------------------------------------
+
+OBJECTIVE 5.2: Describe, create, and use calculated fields
+
+YT-SPLK-012 [direct]
+Which earlier search-time field object can supply a calculated field?
+
+A. An eventtype field applied later
+   Incorrect. Event types are applied later in search-time processing, so that generated field is not an earlier calculated-field input.
+B. A field added later by an automatic lookup
+   Incorrect. Automatic lookups occur after calculated fields; their newly added fields are unavailable at this earlier stage.
+C. A field alias ✅ CORRECT ANSWER
+   Correct. Field aliases are applied before calculated fields, so a calculated-field expression can refer to an aliased field.
+D. A tag applied later
+   Incorrect. Tags are applied later in the sequence and are not available as earlier inputs to a calculated-field definition.
+
+Explanation: Field aliases are applied before calculated fields, so a calculated-field expression can refer to an aliased field.
+Reference: https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.2/get-started-with-knowledge-objects/the-sequence-of-search-time-operations
+Source video: https://www.youtube.com/watch?v=FybQkK-QyYk&t=88s
+
+------------------------------------------------------------------------
+
+YT-SPLK-042 [direct]
+Which fields can be inputs to calculated fields?
+
+A. A tag applied later in search-time processing
+   Incorrect. A tag added later in the search-time sequence cannot supply an earlier calculated-field evaluation.
+B. A field that exists only after a later SPL command
+   Incorrect. A field created only by a subsequent SPL command is unavailable to the earlier calculated-field definition.
+C. A field first created later by an automatic lookup
+   Incorrect. A field first added by a later automatic lookup is not yet available at this stage.
+D. An extracted field ✅ CORRECT ANSWER
+   Correct. Search-time extracted fields exist before calculated fields are evaluated, making them valid inputs.
+
+Explanation: Search-time extracted fields exist before calculated fields are evaluated, making them valid inputs.
+Reference: https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.2/get-started-with-knowledge-objects/the-sequence-of-search-time-operations
+Source video: https://www.youtube.com/watch?v=yCCvOkPSJuw&t=176s
+
+------------------------------------------------------------------------
+
+YT-SPLK-049 [direct]
+Which SPL command underlies calculated-field transformations?
+
+A. eval ✅ CORRECT ANSWER
+   Correct. Calculated fields use eval expressions to apply reusable search-time transformations.
+B. lookup
+   Incorrect. lookup supplies values from a lookup source; it is not the eval expression underlying a calculated field.
+C. stats
+   Incorrect. stats aggregates groups of results rather than defining a calculated field expression.
+D. transaction
+   Incorrect. transaction correlates and combines related events rather than defining this calculated-field transformation.
+
+Explanation: Calculated fields use eval expressions to apply reusable search-time transformations.
+Reference: https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.2/get-started-with-knowledge-objects/the-sequence-of-search-time-operations
+Source video: https://www.youtube.com/watch?v=XEOPz_EAJM8&t=36s
+
+------------------------------------------------------------------------
+
+DOMAIN 6: Creating Tags and Event Types
+
+OBJECTIVE 6.1: Create and use tags
+
+YT-SPLK-002 [direct]
+Using the general tag syntax, how do you search for events tagged critical?
+
+A. eventtype=critical
+   Incorrect. eventtype selects a named event type, which is a different knowledge object.
+B. tag=critical ✅ CORRECT ANSWER
+   Correct. tag=critical searches events associated with that tag across applicable field/value pairs.
+C. tags=critical
+   Incorrect. tags is not the general tag search keyword.
+D. sourcetype=critical
+   Incorrect. sourcetype selects an event format/source category rather than a tag.
+
+Explanation: tag=critical searches events associated with that tag across applicable field/value pairs.
+Reference: https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.2/get-started-with-knowledge-objects/the-sequence-of-search-time-operations
+Source video: https://www.youtube.com/watch?v=jRr3u1IUHvg&t=79s
+
+------------------------------------------------------------------------
+
+YT-SPLK-056 [direct]
+What does a tag label attach to?
+
+A. A field/value pair ✅ CORRECT ANSWER
+   Correct. A tag labels a field/value pair, so events containing the tagged pair can be retrieved with tag syntax.
+B. A field name regardless of its value
+   Incorrect. A tag is attached to a field-value combination.
+C. Only an event type definition, never other field values
+   Incorrect. Tags can label other field-value pairs as well.
+D. Only an indexed raw message with no field-value association
+   Incorrect. Tags are associated with field-value pairs.
+
+Explanation: A tag labels a field/value pair, so events containing the tagged pair can be retrieved with tag syntax.
+Reference: https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.2/get-started-with-knowledge-objects/the-sequence-of-search-time-operations
+Source video: https://www.youtube.com/watch?v=XEOPz_EAJM8&t=408s
+
+------------------------------------------------------------------------
+
+OBJECTIVE 6.2: Describe event types and their uses
+
+YT-SPLK-013 [direct]
+What time-range distinction separates event types from saved reports?
+
+A. An event type does not save a time range ✅ CORRECT ANSWER
+   Correct. An event type classifies events by a search expression rather than storing the report time range.
+B. An event type saves the same time window as its creating search
+   Incorrect. An event type definition does not store that search time range.
+C. An event type always searches only the last hour
+   Incorrect. There is no universal one-hour event-type range.
+D. An event type restricts all future searches to All time
+   Incorrect. It classifies events without imposing such a universal time range.
+
+Explanation: An event type classifies events by a search expression rather than storing the report time range.
+Reference: https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/9.1/event-types/about-event-types
+Source video: https://www.youtube.com/watch?v=FybQkK-QyYk&t=123s
+
+------------------------------------------------------------------------
+
+YT-SPLK-015 [direct]
+Which expression matches the event type named web_errors?
+
+A. eventtype=web_errors ✅ CORRECT ANSWER
+   Correct. eventtype=web_errors selects events classified by that event type.
+B. eventtype(web_errors)
+   Incorrect. eventtype is not invoked as a function in this selection syntax.
+C. sourcetype=eventtype
+   Incorrect. This tests the literal sourcetype value eventtype rather than the web_errors event type.
+D. tag=web_errors
+   Incorrect. tag=web_errors searches a tag, which need not identify the named event type.
+
+Explanation: eventtype=web_errors selects events classified by that event type.
+Reference: https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/9.1/event-types/about-event-types
+Source video: https://www.youtube.com/watch?v=FybQkK-QyYk&t=202s
+
+------------------------------------------------------------------------
+
+OBJECTIVE 6.3: Create an event type
+
+YT-SPLK-046 [direct]
+How can an event type be created through Settings?
+
+A. Settings > Forwarding > New
+   Incorrect. Forwarding settings manage data transport, not event types.
+B. Settings > Indexes > New
+   Incorrect. The Indexes page manages storage indexes rather than event classification expressions.
+C. Settings > Licensing > New
+   Incorrect. Licensing settings manage entitlement/usage rather than event classifications.
+D. Settings > Event types > New ✅ CORRECT ANSWER
+   Correct. The Event types settings page provides the New action for defining an event type.
+
+Explanation: The Event types settings page provides the New action for defining an event type.
+Reference: https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/9.1/event-types/about-event-types
+Source video: https://www.youtube.com/watch?v=yCCvOkPSJuw&t=348s
+
+------------------------------------------------------------------------
+
+DOMAIN 7: Creating and Using Macros
+
+OBJECTIVE 7.1: Describe macros
+
+YT-SPLK-017 [direct]
+What does a macro let you reuse?
+
+A. An event type with a piped eval command
+   Incorrect. Event types do not represent arbitrary reusable SPL pipelines.
+B. An alias that computes several derived fields
+   Incorrect. An alias supplies a name rather than expanding a pipeline.
+C. A reusable SPL fragment ✅ CORRECT ANSWER
+   Correct. A macro expands to a reusable SPL fragment and can optionally accept arguments.
+D. A tag that executes a search when referenced
+   Incorrect. A tag is a label rather than an executable SPL definition.
+
+Explanation: A macro expands to a reusable SPL fragment and can optionally accept arguments.
+Reference: https://docs.splunk.com/Documentation/Splunk/9.4.2/Knowledge/Definesearchmacros
+Source video: https://www.youtube.com/watch?v=FybQkK-QyYk&t=281s
+
+------------------------------------------------------------------------
+
+OBJECTIVE 7.3: Define arguments and variables for a macro
+
+YT-SPLK-010 [direct]
+A macro defines an argument named field. Which token substitutes that argument in the macro definition?
+
+A. {field}
+   Incorrect. Curly braces are not the macro-definition argument token syntax.
+B. $field$ ✅ CORRECT ANSWER
+   Correct. Macro definitions substitute named arguments using dollar-sign tokens such as $field$.
+C. [field]
+   Incorrect. Square brackets denote subsearch syntax in SPL, not macro argument substitution.
+D. %field%
+   Incorrect. Percent signs do not delimit a named macro argument.
+
+Explanation: Macro definitions substitute named arguments using dollar-sign tokens such as $field$.
+Reference: https://help.splunk.com/en/splunk-cloud-platform/manage-knowledge-objects/knowledge-management-manual/10.6/search-macros/define-search-macros-in-settings
+Source video: https://www.youtube.com/watch?v=FybQkK-QyYk&t=37s
+
+------------------------------------------------------------------------
+
+YT-SPLK-055 [direct]
+Which definition name denotes a search macro named session_summary that accepts three arguments?
+
+A. session_summary_3 with no declared arguments
+   Incorrect. A suffix _3 alone does not declare the number of macro arguments.
+B. 3session_summary
+   Incorrect. A prefix of 3 is part of a name, not the argument-count declaration.
+C. session_summary with an unlimited argument count
+   Incorrect. Macros do not all accept arbitrary numbers of arguments; the arity is defined.
+D. session_summary(3) ✅ CORRECT ANSWER
+   Correct. A definition named session_summary(3) declares a three-argument macro; its definition must also supply the argument names.
+
+Explanation: A definition named session_summary(3) declares a three-argument macro; its definition must also supply the argument names.
+Reference: https://help.splunk.com/en/splunk-cloud-platform/manage-knowledge-objects/knowledge-management-manual/10.6/search-macros/define-search-macros-in-settings
+Source video: https://www.youtube.com/watch?v=XEOPz_EAJM8&t=367s
+
+------------------------------------------------------------------------
+
+OBJECTIVE 7.4: Add and use arguments with a macro
+
+YT-SPLK-057 [direct]
+Adapted macro question: set_new(1) is a command-fragment macro defined as eval new_field=$field$. Which search correctly invokes it with old_field?
+
+A. index=main | 'set_new(old_field)' | table _time new_field
+   Incorrect. Single quotes do not invoke a search macro; they have different SPL expression uses.
+B. index=main | "set_new(old_field)" | table _time new_field
+   Incorrect. Double quotes do not invoke a search macro; this is not the required command-fragment expansion syntax.
+C. index=main | `set_new(old_field)` | table _time new_field ✅ CORRECT ANSWER
+   Correct. Backticks invoke the macro. The supplied old_field argument replaces $field$, expanding to eval new_field=old_field before table selects the fields.
+D. index=main | $set_new(old_field)$ | table _time new_field
+   Incorrect. Dollar-sign tokens reference arguments inside definitions, not the macro invocation itself.
+
+Explanation: Backticks invoke the macro. The supplied old_field argument replaces $field$, expanding to eval new_field=old_field before table selects the fields.
+Reference: https://help.splunk.com/en/splunk-cloud-platform/manage-knowledge-objects/knowledge-management-manual/10.6/search-macros/define-search-macros-in-settings
+Source video: https://www.youtube.com/watch?v=XEOPz_EAJM8&t=450s
+
+------------------------------------------------------------------------
+
+DOMAIN 8: Creating and Using Workflow Actions
+
+OBJECTIVE 8.1: Describe the function of GET, POST, and Search workflow actions
+
+YT-SPLK-021 [direct]
+Which workflow action runs another search from event field values?
+
+A. POST workflow action
+   Incorrect. A POST workflow submits an HTTP POST request rather than starting this configured SPL search.
+B. Search workflow action ✅ CORRECT ANSWER
+   Correct. A Search workflow launches a secondary SPL search using values from the originating event.
+C. Lookup table definition
+   Incorrect. A lookup definition maps/enriches fields; it is not a selectable secondary Search workflow.
+D. GET workflow action
+   Incorrect. A GET workflow opens a URL/HTTP GET request; it is not the secondary SPL Search action.
+
+Explanation: A Search workflow launches a secondary SPL search using values from the originating event.
+Reference: https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/9.1/workflow-actions/about-workflow-actions-in-splunk-web
+Source video: https://www.youtube.com/watch?v=FybQkK-QyYk&t=442s
+
+------------------------------------------------------------------------
+
+YT-SPLK-040 [direct]
+Which set lists the three workflow action types available in Splunk Web?
+
+A. GET, POST, and search ✅ CORRECT ANSWER
+   Correct. Splunk workflow actions support GET, POST, and Search types.
+B. GET, DELETE, and PUT
+   Incorrect. DELETE and PUT are HTTP methods but are not the three workflow action types described here.
+C. Email, schedule, and ingest
+   Incorrect. Email, scheduling, and ingestion are not the three workflow action types.
+D. Lookup, index, and replicate
+   Incorrect. Lookup, index, and replicate are different functions rather than this workflow-type set.
+
+Explanation: Splunk workflow actions support GET, POST, and Search types.
+Reference: https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.6/workflow-actions/about-workflow-actions-in-splunk-web
+Source video: https://www.youtube.com/watch?v=yCCvOkPSJuw&t=113s
+
+------------------------------------------------------------------------
+
+YT-SPLK-044 [direct]
+What use case is associated with a GET workflow?
+
+A. Run a secondary SPL search through a Search action
+   Incorrect. That is the Search workflow action use case rather than an external GET request.
+B. Submit event values in an HTTP form body
+   Incorrect. A POST action is used for that form submission.
+C. Retrieve external information using a URL built from event values ✅ CORRECT ANSWER
+   Correct. A GET workflow inserts event values into a URL and retrieves external information using an HTTP GET request.
+D. Replace an existing field value through an eval expression
+   Incorrect. A calculation is not a GET workflow action.
+
+Explanation: A GET workflow inserts event values into a URL and retrieves external information using an HTTP GET request.
+Reference: https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.6/workflow-actions/about-workflow-actions-in-splunk-web
+Source video: https://www.youtube.com/watch?v=yCCvOkPSJuw&t=255s
+
+------------------------------------------------------------------------
+
+OBJECTIVE 8.2: Create a GET workflow action
+
+YT-SPLK-045 [direct]
+Where can the URL from a GET workflow open?
+
+A. Only a server-side HTTP request with no browser window
+   Incorrect. The workflow creates a user-selectable browser link; it is not limited to an invisible server-side request.
+B. Only the current window
+   Incorrect. Current-window behavior is an option, not the only supported choice.
+C. The current window or a new window ✅ CORRECT ANSWER
+   Correct. A GET workflow link can be configured to open in the current browser window or a new one.
+D. Only a new window
+   Incorrect. New-window behavior is an option, not the only supported choice.
+
+Explanation: A GET workflow link can be configured to open in the current browser window or a new one.
+Reference: https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.6/workflow-actions/about-workflow-actions-in-splunk-web
+Source video: https://www.youtube.com/watch?v=yCCvOkPSJuw&t=295s
+
+------------------------------------------------------------------------
+
+YT-SPLK-050 [direct]
+Which browser-window choices are available for GET workflow links?
+
+A. Only the current window
+   Incorrect. A GET link can also open in a new window.
+B. Only a popup containing an SPL result table
+   Incorrect. The action opens a configured URL rather than requiring that display.
+C. Only a new window
+   Incorrect. The current-window option is also available.
+D. The current window or a new window ✅ CORRECT ANSWER
+   Correct. A GET workflow link can be configured to open in the current browser window or a new one.
+
+Explanation: A GET workflow link can be configured to open in the current browser window or a new one.
+Reference: https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.6/workflow-actions/about-workflow-actions-in-splunk-web
+Source video: https://www.youtube.com/watch?v=XEOPz_EAJM8&t=71s
+
+------------------------------------------------------------------------
+
+OBJECTIVE 8.4: Create a Search workflow action
+
+YT-SPLK-008 [direct]
+How can a search workflow reuse the originating search’s time window?
+
+A. Set a fixed All time range for every action
+   Incorrect. This does not reuse the originating window.
+B. Use only the selected event timestamp with no surrounding range
+   Incorrect. A single event time does not preserve the originating interval.
+C. Enable reuse of the originating search time range ✅ CORRECT ANSWER
+   Correct. The Search workflow configuration can reuse the time range of the search that produced the event field listing.
+D. Set the action to Last 15 minutes regardless of the original search
+   Incorrect. A fixed recent range may differ from the originating window.
+
+Explanation: The Search workflow configuration can reuse the time range of the search that produced the event field listing.
+Reference: https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.4/workflow-actions/set-up-a-search-workflow-action
+Source video: https://www.youtube.com/watch?v=jRr3u1IUHvg&t=430s
+
+------------------------------------------------------------------------
+
+YT-SPLK-027 [direct]
+Whose permissions apply to a workflow-generated search?
+
+A. The creator of the workflow object in every case
+   Incorrect. The launched search runs with the permissions of its executing user.
+B. The user executing the workflow search ✅ CORRECT ANSWER
+   Correct. The secondary search runs with the permissions of its executing user; a workflow does not grant the creator’s privileges.
+C. The owner of the report definition in every case
+   Incorrect. Report ownership does not replace the executing workflow user for this search.
+D. The administrator role regardless of the caller
+   Incorrect. The action does not automatically grant administrator search access.
+
+Explanation: The secondary search runs with the permissions of its executing user; a workflow does not grant the creator’s privileges.
+Reference: https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.4/workflow-actions/set-up-a-search-workflow-action
+Source video: https://www.youtube.com/watch?v=h3SB_6wgTPo&t=121s
+
+------------------------------------------------------------------------
+
+YT-SPLK-031 [direct]
+What time-window choice can be made when configuring a search workflow?
+
+A. The source-type extraction delimiter
+   Incorrect. Delimiter settings do not define a secondary search time range.
+B. The argument count of a macro
+   Incorrect. Macro arity does not determine the action time interval.
+C. The transaction maxevents setting
+   Incorrect. A transaction count limit does not configure the action time window.
+D. The secondary search's time range ✅ CORRECT ANSWER
+   Correct. A Search workflow can specify the secondary search’s time range or reuse the originating range.
+
+Explanation: A Search workflow can specify the secondary search’s time range or reuse the originating range.
+Reference: https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.4/workflow-actions/set-up-a-search-workflow-action
+Source video: https://www.youtube.com/watch?v=h3SB_6wgTPo&t=362s
+
+------------------------------------------------------------------------
+
+DOMAIN 9: Creating Data Models
+
+OBJECTIVE 9.1: Describe the relationship between data models and pivot
+
+YT-SPLK-023 [direct]
+What does Pivot help create?
+
+A. Field extractions configured from raw text
+   Incorrect. Extraction defines fields rather than producing model-based reports and dashboards.
+B. Workflow actions defined for event menus
+   Incorrect. Actions provide contextual links or searches rather than Pivot report construction.
+C. Reports and dashboards from data model datasets ✅ CORRECT ANSWER
+   Correct. Pivot builds reports and visualizations over data model datasets without requiring users to compose the full SPL.
+D. Search macro definitions with positional arguments
+   Incorrect. Macros reuse SPL rather than providing the Pivot graphical model-report interface.
+
+Explanation: Pivot builds reports and visualizations over data model datasets without requiring users to compose the full SPL.
+Reference: https://help.splunk.com/en/splunk-cloud-platform/manage-knowledge-objects/knowledge-management-manual/9.3.2408/build-a-data-model/about-data-models
+Source video: https://www.youtube.com/watch?v=FybQkK-QyYk&t=515s
+
+------------------------------------------------------------------------
+
+YT-SPLK-030 [direct]
+How are Pivot and data models connected?
+
+A. Pivot defines only the model acceleration schedule
+   Incorrect. Acceleration configuration is not the central Pivot-to-dataset relationship.
+B. Data models provide only saved chart formatting
+   Incorrect. They define datasets and attributes rather than merely presentation.
+C. Pivot extracts every field directly without a dataset definition
+   Incorrect. Pivot uses the selected data model dataset.
+D. Data models supply the datasets used by Pivot ✅ CORRECT ANSWER
+   Correct. Data models define the constrained datasets and fields that Pivot analyzes.
+
+Explanation: Data models define the constrained datasets and fields that Pivot analyzes.
+Reference: https://help.splunk.com/en/splunk-cloud-platform/manage-knowledge-objects/knowledge-management-manual/9.3.2408/build-a-data-model/about-data-models
+Source video: https://www.youtube.com/watch?v=h3SB_6wgTPo&t=319s
+
+------------------------------------------------------------------------
+
+YT-SPLK-035 [direct]
+How does Pivot expose aspects of a data model?
+
+A. Editing the source extraction regex for every Pivot operation
+   Incorrect. Pivot uses the model definition rather than requiring a new extraction per report.
+B. Replacing the dataset constraints with chart labels
+   Incorrect. Labels do not define the event subset.
+C. Requiring the user to type every generated SPL command
+   Incorrect. Pivot provides a graphical reporting interface.
+D. Creating visualizations from a chosen model dataset ✅ CORRECT ANSWER
+   Correct. Pivot presents model dataset dimensions and measures through visualizations.
+
+Explanation: Pivot presents model dataset dimensions and measures through visualizations.
+Reference: https://help.splunk.com/en/splunk-cloud-platform/manage-knowledge-objects/knowledge-management-manual/9.3.2408/build-a-data-model/about-data-models
+Source video: https://www.youtube.com/watch?v=h3SB_6wgTPo&t=528s
+
+------------------------------------------------------------------------
+
+OBJECTIVE 9.2: Identify data model attributes
+
+YT-SPLK-036 [direct]
+Which edit is available for a non-inherited auto-extracted field in a data model?
+
+A. Change its model display name or its assigned data type ✅ CORRECT ANSWER
+   Correct. For a non-inherited auto-extracted field, the model editor can change its display name or correct its assigned type.
+B. Changing its type rewrites every raw event
+   Incorrect. Changing a model field type does not rewrite all stored raw events.
+C. Changing its display name renames the indexed field
+   Incorrect. The display name is model-local; changing it does not rename the indexed field.
+D. An auto-extracted field's type can never be changed
+   Incorrect. An incorrectly assigned auto-extracted type can be corrected; it is not permanently fixed.
+
+Explanation: For a non-inherited auto-extracted field, the model editor can change its display name or correct its assigned type.
+Reference: https://help.splunk.com/en/splunk-cloud-platform/manage-knowledge-objects/knowledge-management-manual/9.3.2411/define-data-model-dataset-fields/define-dataset-fields
+Source video: https://www.youtube.com/watch?v=h3SB_6wgTPo&t=573s
+
+------------------------------------------------------------------------
+
+YT-SPLK-039 [direct]
+To select a named dataset with the datamodel command, which pair of identifiers do you supply?
+
+A. Only the root index name
+   Incorrect. An index name alone does not identify the requested model and dataset.
+B. The model name and dataset name ✅ CORRECT ANSWER
+   Correct. The model and dataset identifiers identify which dataset the datamodel command should select. Additional syntax depends on the requested operation.
+C. Only the model name with no named dataset selection
+   Incorrect. The question asks for a particular named dataset within the model.
+D. Only the dataset display label with no model context
+   Incorrect. The pair identifies the dataset within its containing model.
+
+Explanation: The model and dataset identifiers identify which dataset the datamodel command should select. Additional syntax depends on the requested operation.
+Reference: https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.4/build-a-data-model/design-data-models
+Source video: https://www.youtube.com/watch?v=yCCvOkPSJuw&t=80s
+
+------------------------------------------------------------------------
+
+YT-SPLK-043 [direct]
+What are the three traditional data model dataset categories?
+
+A. Index, source, and source type
+   Incorrect. These describe event storage or metadata rather than the three dataset categories.
+B. Event, search, transaction ✅ CORRECT ANSWER
+   Correct. Traditional data models can contain event, search, and transaction dataset types.
+C. Extracted, calculated, and inherited
+   Incorrect. These are field categories rather than dataset categories.
+D. GET, POST, and search
+   Incorrect. These are workflow action types rather than data model dataset categories.
+
+Explanation: Traditional data models can contain event, search, and transaction dataset types.
+Reference: https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.4/build-a-data-model/design-data-models
+Source video: https://www.youtube.com/watch?v=yCCvOkPSJuw&t=211s
+
+------------------------------------------------------------------------
+
+OBJECTIVE 9.3: Create a data model
+
+YT-SPLK-014 [direct]
+Which root dataset uses a simple event-search constraint rather than a full search pipeline or transaction definition?
+
+A. Root search dataset using its full search string
+   Incorrect. A root search dataset uses a search definition rather than this simple root event constraint.
+B. Root transaction dataset using a transaction definition
+   Incorrect. A root transaction dataset is defined through its grouping configuration.
+C. Root event dataset ✅ CORRECT ANSWER
+   Correct. A root event dataset uses a constraint to select the events represented by the dataset.
+D. A child dataset that replaces all inherited constraints
+   Incorrect. A child narrows inherited data; it is not a root dataset replacing the parent constraints.
+
+Explanation: A root event dataset uses a constraint to select the events represented by the dataset.
+Reference: https://help.splunk.com/en/splunk-enterprise/manage-knowledge-objects/knowledge-management-manual/10.4/build-a-data-model/design-data-models
+Source video: https://www.youtube.com/watch?v=FybQkK-QyYk&t=166s
+
+------------------------------------------------------------------------
+
+DOMAIN 10: Using the Common Information Model (CIM) Add-On
+
+OBJECTIVE 10.1: Describe the Splunk CIM
+
+YT-SPLK-011 [supplemental]
+Under traditional Splunk Enterprise ingestion-volume licensing, which listed data normally counts toward licensed daily ingestion?
+
+A. An indexer cluster's replicated copies
+   Incorrect. Cluster replication copies already-indexed data; it is not a second new ingestion for ordinary volume accounting.
+B. Summary results written with the standard summary-index mechanism
+   Incorrect. Standard summary-index output has special licensing treatment; it is not equivalent to fresh external event ingestion.
+C. Newly indexed Windows event logs ✅ CORRECT ANSWER
+   Correct. Under traditional volume licensing, newly ingested Windows event data is ordinarily chargeable. This is supplemental and requires checking the applicable license model.
+D. Splunk's own logs in _internal
+   Incorrect. Splunk internal logs in _internal are ordinarily exempt from ingestion-volume accounting.
+
+Explanation: Under traditional volume licensing, newly ingested Windows event data is ordinarily chargeable. This is supplemental and requires checking the applicable license model. Supplemental topic: the assigned objective is a related filing category, not a direct exam-objective match. Excluded from scored practice.
+Reference: https://help.splunk.com/en/data-management/common-information-model/6.2/using-the-common-information-model/use-the-cim-to-normalize-data-at-search-time
+Source video: https://www.youtube.com/watch?v=FybQkK-QyYk&t=54s
+Supplemental study only; excluded from exams. The objective is a related filing category.
+
+------------------------------------------------------------------------
+
+YT-SPLK-038 [direct]
+What is CIM’s central normalization purpose?
+
+A. Only rename fields without checking their meaning
+   Incorrect. CIM normalization includes semantic meaning and classification.
+B. Automatically make every custom source compliant on installation
+   Incorrect. Source mappings may still be required.
+C. Change the raw source type to the model name
+   Incorrect. A source-type rename does not establish normalized fields and categories.
+D. Normalize heterogeneous data to common fields and categories ✅ CORRECT ANSWER
+   Correct. CIM defines common fields and categories so semantically similar events from different vendors can be analyzed consistently.
+
+Explanation: CIM defines common fields and categories so semantically similar events from different vendors can be analyzed consistently.
+Reference: https://help.splunk.com/en/splunk-cloud-platform/common-information-model/6.0/data-models/cim-fields-per-associated-data-model
+Source video: https://www.youtube.com/watch?v=yCCvOkPSJuw&t=34s
+
+------------------------------------------------------------------------
+
+OBJECTIVE 10.2: List the knowledge objects included with the Splunk CIM Add-On
+
+YT-SPLK-001 [direct]
+Where should you look up the CIM add-on’s supplied data models?
+
+A. CIM add-on manual ✅ CORRECT ANSWER
+   Correct. The CIM manual documents the fields, tags, and datasets supplied by the add-on.
+B. License manager event log
+   Incorrect. License logs record usage, not the semantic definitions of CIM models.
+C. Pivot visualization manual
+   Incorrect. Pivot documentation covers building visualizations rather than the CIM model catalog.
+D. Forwarder installation guide
+   Incorrect. Forwarder installation explains collection infrastructure, not CIM dataset definitions.
+
+Explanation: The CIM manual documents the fields, tags, and datasets supplied by the add-on.
+Reference: https://help.splunk.com/en/splunk-cloud-platform/common-information-model/6.0/data-models/cim-fields-per-associated-data-model
+Source video: https://www.youtube.com/watch?v=jRr3u1IUHvg&t=36s
+
+------------------------------------------------------------------------
+
+YT-SPLK-003 [direct]
+In the CIM 6.1 setup documentation, what is the default acceleration setting for the models supplied with the add-on?
+
+A. Acceleration enabled for every model
+   Incorrect. The pinned CIM 6.1 documentation specifies disabled by default.
+B. Acceleration enabled only for Authentication
+   Incorrect. The documented default is not an Authentication-only exception.
+C. Acceleration disabled ✅ CORRECT ANSWER
+   Correct. CIM 6.1 setup documentation says the supplied models have acceleration disabled by default. An administrator can enable it; this is not a claim about every configured deployment.
+D. Acceleration enabled only for Network Traffic
+   Incorrect. The documented default is not a Network-Traffic-only exception.
+
+Explanation: CIM 6.1 setup documentation says the supplied models have acceleration disabled by default. An administrator can enable it; this is not a claim about every configured deployment.
+Reference: https://help.splunk.com/en/splunk-cloud-platform/common-information-model/6.1/introduction/set-up-the-splunk-common-information-model-add-on
+Source video: https://www.youtube.com/watch?v=jRr3u1IUHvg&t=122s
+
+------------------------------------------------------------------------
+
+YT-SPLK-026 [direct]
+Which group contains only categories listed in the CIM 6.0 data model reference?
+
+A. Email, Dashboard Layouts, and User Permissions
+   Incorrect. Email is a model category, but Dashboard Layouts and User Permissions are not categories in that model catalog.
+B. Alerts, Email, and Databases ✅ CORRECT ANSWER
+   Correct. Alerts, Email, and Databases are all model categories listed in the cited CIM 6.0 reference.
+C. Alerts, Dashboard Layouts, and Search Job Priorities
+   Incorrect. Alerts is a model category, but Dashboard Layouts and Search Job Priorities are not.
+D. Databases, License Pools, and Search Job Priorities
+   Incorrect. Databases is a model category, but License Pools and Search Job Priorities are not.
+
+Explanation: Alerts, Email, and Databases are all model categories listed in the cited CIM 6.0 reference.
+Reference: https://help.splunk.com/en/splunk-cloud-platform/common-information-model/6.0/data-models/cim-fields-per-associated-data-model
+Source video: https://www.youtube.com/watch?v=h3SB_6wgTPo&t=91s
+
+------------------------------------------------------------------------
+
+YT-SPLK-052 [direct]
+What reusable modeling structure does the CIM add-on supply?
+
+A. A universal parser for every custom vendor source
+   Incorrect. Source-specific parsing and mappings are not universally supplied.
+B. Only tags with no model definitions
+   Incorrect. The add-on includes predefined data models.
+C. Predefined data models ✅ CORRECT ANSWER
+   Correct. The CIM add-on supplies predefined data models that describe common event semantics.
+D. Automatically enabled acceleration for every model
+   Incorrect. Acceleration defaults and configuration are not a universal always-on guarantee.
+
+Explanation: The CIM add-on supplies predefined data models that describe common event semantics.
+Reference: https://help.splunk.com/en/splunk-cloud-platform/common-information-model/6.0/data-models/cim-fields-per-associated-data-model
+Source video: https://www.youtube.com/watch?v=XEOPz_EAJM8&t=177s
+
+------------------------------------------------------------------------
+
+OBJECTIVE 10.3: Use the CIM Add-On to normalize data
+
+YT-SPLK-018 [direct]
+Which knowledge object can normalize vendor-specific field values through a table-based CIM mapping?
+
+A. Field alias alone
+   Incorrect. An alias can normalize an equivalent name but does not translate values using a table.
+B. Lookups ✅ CORRECT ANSWER
+   Correct. Lookups can map vendor values or enrich events so they match CIM expectations.
+C. Tag alone
+   Incorrect. A tag classifies field-value pairs rather than performing the table mapping.
+D. Event type alone
+   Incorrect. Classification does not perform a table-based value translation.
+
+Explanation: Lookups can map vendor values or enrich events so they match CIM expectations.
+Reference: https://help.splunk.com/en/splunk-enterprise/common-information-model/6.4/using-the-common-information-model/use-the-cim-to-normalize-data-at-search-time
+Source video: https://www.youtube.com/watch?v=FybQkK-QyYk&t=330s
+
+------------------------------------------------------------------------
+

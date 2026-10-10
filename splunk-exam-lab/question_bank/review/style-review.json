@@ -1,0 +1,27 @@
+{
+  "reviewed": 358,
+  "changed": 322,
+  "base_rewritten": 300,
+  "playlist_improved": 22,
+  "unchanged_playlist": 36,
+  "single_answer_four_option": 358,
+  "option_rationales": 1432,
+  "exam_eligible": 355,
+  "supplemental": 3,
+  "base_correct_positions": {
+    "A": 75,
+    "B": 75,
+    "C": 75,
+    "D": 75
+  },
+  "subjective_editorial_review": "Direct stems, plausible within-domain distractors, one defensible key, no answer supplied in stem, per-option rationale. Topic overlap retained; semantic duplicates were not automatically removed.",
+  "live_splunk_execution": false,
+  "independent_SME_review": false,
+  "final_review_date": "2026-10-10",
+  "final_review_notes": [
+    "Reviewed all 358 question stems, correct choices and distractor combinations.",
+    "Refined SPLK-060-B, SPLK-088-B and SPLK-090-C to remove unrelated distractors.",
+    "Shuffled balanced base answer positions to remove the predictable A-B-C-D sequence.",
+    "Primary documentation checked for transaction behavior, fillnull, calculated-field order, macro arguments, event types, workflows, dataset constraints, and CIM."
+  ]
+}

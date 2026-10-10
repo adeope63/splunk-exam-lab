@@ -110,6 +110,7 @@ async def import_questions(file: UploadFile=File(...),db: Session=Depends(get_db
             rows=list(csv.DictReader(io.StringIO(text)))
             for row in rows:
                 for key in ['options','correct','commands']: row[key]=json.loads(row[key])
+                if row.get('source_question_number')=='': row['source_question_number']=None
         else: rows=json.loads(text)
         if not isinstance(rows,list) or len(rows)>2000: raise ValueError('Import must be an array of at most 2000 questions')
         checked=[QuestionInput.model_validate(row) for row in rows]

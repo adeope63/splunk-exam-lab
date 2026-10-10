@@ -20,6 +20,10 @@ class QuestionInput(BaseModel):
     commands: list[str] = []
     reference: str = ''
     review_status: Literal['verified','needs_review'] = 'needs_review'
+    objective_alignment: Literal['direct','supporting','supplemental'] = 'direct'
+    source: str = Field(default='',max_length=200)
+    source_url: str = Field(default='',max_length=1000)
+    source_question_number: Optional[int] = Field(default=None,ge=1)
     @model_validator(mode='after')
     def validate_answers(self):
         ids=[o.id for o in self.options]
@@ -29,6 +33,7 @@ class QuestionInput(BaseModel):
         if self.type=='multiple' and len(self.correct)<2: raise ValueError('Multiple-response requires at least two correct answers')
         if not self.objective_id.startswith(f'{self.domain_id}.'): raise ValueError('Domain and objective do not match')
         if self.reference and not self.reference.startswith(('https://docs.splunk.com/','https://help.splunk.com/','https://www.splunk.com/')): raise ValueError('Use an official Splunk documentation URL')
+        if self.source_url and not self.source_url.startswith('https://www.youtube.com/watch?'): raise ValueError('Use a YouTube video source URL')
         return self
 class StartExam(BaseModel):
     mode: Literal['mock','quick','topic','wrong']='quick'
