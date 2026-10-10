@@ -1,0 +1,200 @@
+[
+  {
+    "id": 1,
+    "name": "Using Transforming Commands for Visualizations",
+    "weight": 5,
+    "objectives": [
+      {
+        "id": "1.1",
+        "name": "Use the chart command"
+      },
+      {
+        "id": "1.2",
+        "name": "Use the timechart command"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Filtering and Formatting Results",
+    "weight": 10,
+    "objectives": [
+      {
+        "id": "2.1",
+        "name": "The eval command"
+      },
+      {
+        "id": "2.2",
+        "name": "Use the search and where commands to filter results"
+      },
+      {
+        "id": "2.3",
+        "name": "The fillnull command"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Correlating Events",
+    "weight": 15,
+    "objectives": [
+      {
+        "id": "3.1",
+        "name": "Identify transactions"
+      },
+      {
+        "id": "3.2",
+        "name": "Group events using fields"
+      },
+      {
+        "id": "3.3",
+        "name": "Group events using fields and time"
+      },
+      {
+        "id": "3.4",
+        "name": "Search with transactions"
+      },
+      {
+        "id": "3.5",
+        "name": "Report on transactions"
+      },
+      {
+        "id": "3.6",
+        "name": "Determine when to use transactions vs. stats"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Creating and Managing Fields",
+    "weight": 10,
+    "objectives": [
+      {
+        "id": "4.1",
+        "name": "Perform regex field extractions using the Field Extractor (FX)"
+      },
+      {
+        "id": "4.2",
+        "name": "Perform delimiter field extractions using the FX"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Creating Field Aliases and Calculated Fields",
+    "weight": 10,
+    "objectives": [
+      {
+        "id": "5.1",
+        "name": "Describe, create, and use field aliases"
+      },
+      {
+        "id": "5.2",
+        "name": "Describe, create, and use calculated fields"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Creating Tags and Event Types",
+    "weight": 10,
+    "objectives": [
+      {
+        "id": "6.1",
+        "name": "Create and use tags"
+      },
+      {
+        "id": "6.2",
+        "name": "Describe event types and their uses"
+      },
+      {
+        "id": "6.3",
+        "name": "Create an event type"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Creating and Using Macros",
+    "weight": 10,
+    "objectives": [
+      {
+        "id": "7.1",
+        "name": "Describe macros"
+      },
+      {
+        "id": "7.2",
+        "name": "Create and use a basic macro"
+      },
+      {
+        "id": "7.3",
+        "name": "Define arguments and variables for a macro"
+      },
+      {
+        "id": "7.4",
+        "name": "Add and use arguments with a macro"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Creating and Using Workflow Actions",
+    "weight": 10,
+    "objectives": [
+      {
+        "id": "8.1",
+        "name": "Describe the function of GET, POST, and Search workflow actions"
+      },
+      {
+        "id": "8.2",
+        "name": "Create a GET workflow action"
+      },
+      {
+        "id": "8.3",
+        "name": "Create a POST workflow action"
+      },
+      {
+        "id": "8.4",
+        "name": "Create a Search workflow action"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Creating Data Models",
+    "weight": 10,
+    "objectives": [
+      {
+        "id": "9.1",
+        "name": "Describe the relationship between data models and pivot"
+      },
+      {
+        "id": "9.2",
+        "name": "Identify data model attributes"
+      },
+      {
+        "id": "9.3",
+        "name": "Create a data model"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Using the Common Information Model (CIM) Add-On",
+    "weight": 10,
+    "objectives": [
+      {
+        "id": "10.1",
+        "name": "Describe the Splunk CIM"
+      },
+      {
+        "id": "10.2",
+        "name": "List the knowledge objects included with the Splunk CIM Add-On"
+      },
+      {
+        "id": "10.3",
+        "name": "Use the CIM Add-On to normalize data"
+      }
+    ]
+  }
+]

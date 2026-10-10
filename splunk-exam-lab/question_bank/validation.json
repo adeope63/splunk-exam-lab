@@ -1,0 +1,20 @@
+{
+  "count": 300,
+  "original_concept_cases": 100,
+  "distribution": {
+    "1": 15,
+    "2": 30,
+    "3": 45,
+    "4": 30,
+    "5": 30,
+    "6": 30,
+    "7": 30,
+    "8": 30,
+    "9": 30,
+    "10": 30
+  },
+  "objective_coverage": 32,
+  "structural_validation": "passed",
+  "duplicate_stems": 0,
+  "review_method": "Author review against primary Splunk references. No live Splunk execution or independent SME review. Three related learning tasks per concept case; they are not 300 independent concepts."
+}
